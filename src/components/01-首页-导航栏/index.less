@@ -1,4 +1,5 @@
 @import "../../css/base.css";
+@import "../../config/colorConfig";
 #nav-bar{
   height: 140px;
   background-color: #fff;
@@ -11,7 +12,7 @@
       flex: 1;
 
       display: flex;
-      .left{
+      &>.left{
         flex: 1;
         //background-color: green;
         .logo{
@@ -30,11 +31,66 @@
           }
         }
       }
-      .center{
+      &>.center{
         flex: 2;
-        background-color: cyan;
+        .search-bar{
+          width: 400px;
+          height: 40px;
+          margin: 0 auto;
+          border-radius: 20px;
+          border: 1px solid #999;
+
+          box-sizing: border-box;
+          overflow: hidden;
+
+          display: flex;
+          .category{
+            background-color: cyan;
+            flex: 1;
+            border-radius: 20px 0 0 20px;
+            select{
+              width: 100%;
+              height: 100%;
+              border: none;
+              border-radius: 20px 0 0 20px;
+              padding-left: 10px;
+              outline: none;
+              font-size: 15px;
+              color: #666;
+            }
+          }
+          .keyword{
+            background-color: darkcyan;
+            flex: 4;
+            input{
+              width: 100%;
+              height: 100%;
+              padding: 0 0 0 10px;
+              border: none;
+              outline: none;
+              color: #666;
+              font-size: 14px;
+            }
+          }
+          .submit-btn{
+            background-color: darkred;
+            flex: 1;
+            border-radius: 0 20px 20px 0;
+            input{
+              width: 100%;
+              height: 100%;
+              border: none;
+              outline: none;
+              border-radius: 0 20px 20px 0;
+              background-color: @themeColor;
+              color: #fff;
+              font-size: 13px;
+              cursor: pointer;
+            }
+          }
+        }
       }
-      .right{
+      &>.right{
         flex: 1;
         background-color: tomato;
       }
