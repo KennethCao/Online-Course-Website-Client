@@ -1,0 +1,94 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+.like-lb{
+  height: 360px;
+  background-color: tomato;
+  min-width: 1205px;
+
+  .images{
+    background-color: cyan;
+    height: 100%;
+
+    position: relative;
+    li{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      // display是一个不可量化的属性，此时使用opacity来实现轮播图切换的动画的条件
+      //display: none;
+      transition: opacity 1s linear;
+      opacity: 0;
+      &.current{
+        //display: block;
+        opacity: 1;
+      }
+
+      a{
+        width: 100%;
+        height: 100%;
+        display: block;
+        img{
+          width: 1205px;
+          height: 100%;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  position: relative;
+  .titles{
+    width: 280px;
+    height: 274px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 4px;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: ~"calc((100% - 1205px) / 2)";
+
+    padding: 10px 5px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    &::-webkit-scrollbar{
+      display: none;
+    }//chrome safari
+    scrollbar-width:none;// firefox
+    -ms-overflow-style: none;// IE10+
+
+    li{
+      padding: 0 10px 0 20px;
+
+      position: relative;
+      &.current,
+      &:hover{
+        a{
+          color: @themeColor;
+        }
+        &::after{
+          content: "";
+          border: 5px solid transparent;
+          border-right-color: @themeColor;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+        }
+      }
+      a{
+        font-size: 16px;
+        color: #e0e0e0;
+
+        display: block;
+        line-height: 40px;
+      }
+
+    }
+  }
+}
