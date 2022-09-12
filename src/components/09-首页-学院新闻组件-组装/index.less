@@ -1,0 +1,105 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+//@space: 30px;
+
+.section{
+  //height: 200px; // 高度靠内容去撑
+  //background-color: tomato;
+  .title-bar{
+    height: 32px;
+    //background-color: darkcyan;
+    .title{
+      text-align: center;
+      font-size: 28px;
+      color: #780000;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    position: relative;
+    .more{
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #400000;
+      &:hover{
+        color: @themeColor;
+      }
+    }
+
+  }
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    //justify-content: space-between;
+
+    .news-card{
+      width: 500px;
+      //height: 100px;
+      background-color: #fff;
+      margin-top: 30px;
+
+      box-shadow: 2px -1px 10px 0 rgba(0,0,0,0.15);
+      ul{
+        padding: 5px 10px;
+        li{
+          line-height: 36px;
+          display: flex;
+          justify-content: space-between;
+          a{
+            color: #333;
+            font-size: 15px;
+            &:hover{
+              color: @themeColor;
+            }
+
+            // 超出部分不换行、并使用省略号代替
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+          span{
+            // 当新闻简介部分挤压时间部分时，会导致时间部分换行，此时设置最小宽度
+            min-width: 190px;
+            color: #999;
+            font-size: 15px;
+
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+
+    // 额外定义一些特定的类名, 给使用组件容器的开发人员来使用
+    // 类名 -> 各个卡片组件上面
+    // 自动的给他分配空间, 以及调整间距
+    .column5 {
+      width: ~"calc((100% - 4 * 30px) / 5)";
+      margin-bottom: 30px;
+
+      &:not(:nth-child(5n+1)) {
+        margin-left: 30px;
+      }
+    }
+
+    .column3 {
+      width: ~"calc((100% - 2 * 30px) / 3)";
+      margin-bottom: 30px;
+
+      &:not(:nth-child(3n+1)) {
+        margin-left: 30px;
+      }
+    }
+
+    .column2 {
+      width: ~"calc((100% - 1 * 30px) / 2)";
+      margin-bottom: 30px;
+
+      &:not(:nth-child(2n+1)) {
+        margin-left: 30px;
+      }
+    }
+  }
+}
