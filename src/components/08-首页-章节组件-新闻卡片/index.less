@@ -1,0 +1,36 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+.news-card{
+  width: 500px;
+  //height: 100px;
+  background-color: #fff;
+
+  box-shadow: 2px -1px 10px 0 rgba(0,0,0,0.15);
+  ul{
+    padding: 5px 10px;
+    li{
+      line-height: 36px;
+      display: flex;
+      justify-content: space-between;
+      a{
+        color: #333;
+        font-size: 15px;
+        &:hover{
+          color: @themeColor;
+        }
+
+        // 超出部分不换行、并使用省略号代替
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      span{
+        // 当新闻简介部分挤压时间部分时，会导致时间部分换行，此时设置最小宽度
+        min-width: 190px;
+        color: #999;
+        font-size: 15px;
+      }
+    }
+  }
+}
