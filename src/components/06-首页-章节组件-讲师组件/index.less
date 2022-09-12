@@ -1,0 +1,77 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+.teacher-card{
+  width: 390px;
+  height: 150px;
+  //background-color: tomato;
+  margin-top: 100px;
+  box-shadow: 2px -1px 10px 0 rgba(0,0,0,0.15);
+
+  // 头像和简介分为左右的两部分，使用flex布局最为便捷
+  // 但是需要注意的是，当组件被引入时，组件因界面被拉伸，简介不部分可以拉伸但是头像部分不可以
+  display: flex;
+  .left{
+    //background-color: darkcyan;
+    width: 200px;
+
+    position: relative;
+    .t-header{
+      width: 150px;
+      height: 150px;
+      border-radius: 75px;
+      box-shadow: 2px -1px 10px 0 rgba(0,0,0,0.15);
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translate(-50%);
+      &:hover{
+        animation: like-rotate 10s linear 0s infinite;
+      }
+    }
+    .t-name{
+      width: 150px;
+      line-height: 34px;
+      background-color: @themeColor;
+      border-radius: 17px;
+      color: #fff;
+      font-size: 18px;
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      transform: translate(-50%);
+      bottom: 20px;
+
+    }
+  }
+  .right {
+    //background-color: deeppink;
+    flex: 1;
+    padding: 5px;//或者在t-position中添加margin，此处padding的方案更好，因为简介的文字贴边不好看
+
+    .t-position{
+      font-size: 20px;
+      text-align: center;
+      line-height: 40px;
+      color: @themeColor;
+      font-weight: 700;
+      border-bottom: 2px solid @themeColor;
+    }
+    .t-intro{
+      padding-top: 10px;
+      font-size: 16px;
+      color: #666;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@keyframes like-rotate {
+  // 之前原有的translate被覆盖，所以在动画中需要再次进行定义
+  from{
+    transform: translate(-50%) rotateZ(0deg);
+  }
+  to{
+    transform: translate(-50%) rotateZ(360deg);
+  }
+}
