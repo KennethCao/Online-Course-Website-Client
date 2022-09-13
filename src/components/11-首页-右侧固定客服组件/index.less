@@ -1,0 +1,61 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+.fixed-contact{
+  width: 50px;
+  height: 200px;
+  //background-color: tomato;
+  position: fixed;
+  right: 30px;
+  top: 30%;
+  transform: translateY(-50%);
+  .contact,
+  .app,
+  .back-top{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+  }
+  .contact{
+    margin-bottom: 50px;
+    background-image: url(../../assets/images/layout_css_sprites2.png);
+    background-position: -83px -174px;
+
+    &:hover{
+      background-position: -11px -174px;
+    }
+  }
+  .app{
+    background-image: url(../../assets/images/layout_css_sprites.png);
+    background-position: -4px -94px;
+    &:hover {
+      background-color: #ddd;
+      .ewm-pane {
+        display: block;
+      }
+    }
+
+    position: relative;
+    .ewm-pane {
+      width: 120px;
+      height: 120px;
+      box-shadow: 0 0 10px #ccc;
+      padding: 5px;
+      //宽高设置以后，额外添加padding会扩展整个盒子的尺寸
+      box-sizing: border-box;
+      position: absolute;
+      left: -130px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: none;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .back-top{
+    background-image: url(../../assets/images/layout_css_sprites.png);
+    background-position: -166px 2px;
+  }
+}
