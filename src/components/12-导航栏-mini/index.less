@@ -1,0 +1,246 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+.navbar-mini{
+  height: 60px;
+  min-width: 1205px;
+  background-image: url(../../assets/images/bg_nav_rep.png);
+  background-repeat: repeat-x;
+  .content{
+    height: 100%;
+
+    display: flex;
+    .left{
+      flex:3;
+      //background-color: tomato;
+
+      display: flex;
+      .logo {
+        width: 177px;
+        height: 60px;
+        margin: 0;
+
+        a {
+          height: 100%;
+          width: 100%;
+          display: block;
+          font-size: 0;
+          background-image: url(../../assets/images/logo-mini.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+      .menu {
+        //background-color: tomato;
+        height: 100%;
+        display: flex;
+        li {
+          //background-color: cyan;
+          //padding: 0 20px;
+          position: relative;
+          &.current,// 实现定位效果的显示
+          &:hover {
+            a {
+              color: @themeColor;
+            }
+            &::after {//设置下划线效果
+              content: "";
+              display: block;
+              width: ~"calc(100% - 40px)";//less中使用JS动态计算下划线效果中下划线的长度
+              height: 5px;
+              background-color: @themeColor;
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+
+          a {
+            //width: 100%;
+            height: 100%;
+            line-height: 60px;
+            //background-color: red;
+            display: block;
+            padding: 0 20px; //内边距的设置从li改到a是为了实现“连在一起”的效果，且不可与width重复设置
+            font-size: 18px;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .center{
+      flex:2;
+      //background-color: pink;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .search-bar {
+        width: 300px;
+        height: 40px;
+        margin: 0 auto;
+        background-color: #444;
+        border-radius: 20px;
+        border: 1px solid #999;
+
+        box-sizing: border-box;
+        overflow: hidden;
+
+        display: flex;
+
+        .category {
+          //background-color: cyan;
+          flex: 3;
+          border-radius: 20px 0 0 20px;
+
+          select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            padding-left: 10px;
+            outline: none;
+            font-size: 15px;
+            color: #fff;
+            background-color: transparent;
+            option{
+              background-color: #444;
+            }
+          }
+        }
+
+        .keyword {
+          //background-color: darkcyan;
+          flex: 8;
+
+          input {
+            width: 100%;
+            height: 100%;
+            padding: 0 0 0 10px;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 14px;
+            background-color: transparent;
+          }
+        }
+
+        .submit-btn {
+          //background-color: darkred;
+          flex: 2;
+          border-radius: 0 20px 20px 0;
+
+          input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            border-radius: 0 20px 20px 0;
+            background-color: transparent;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+          }
+        }
+      }
+
+    }
+    .right{
+      flex:2;
+      //background-color: darkcyan;
+
+      display: flex;
+      justify-content: flex-end;
+      .intro {
+        width: fit-content;
+        height: 60px;
+        //background-color: cyan;
+
+        position: relative;
+
+        &:hover .operation-pane {
+          display: block;
+        }
+
+        display: flex;
+        align-items: center;
+        .user {
+          width: fit-content;
+          height: 32px;
+          //background-color: red;
+
+          display: flex;
+          align-items: center;
+
+          .nickname {
+            margin-right: 10px;
+            font-size: 16px;
+            color: #fff;
+          }
+
+          .header {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+          }
+        }
+
+        .operation-pane {
+          width: 160px;
+          //height: 300px;
+          background-color: #fff;
+
+          position: absolute;
+          z-index: 999;
+          right: 0;
+          top: 60px;
+          display: none;
+
+          border: 1px solid #eee;
+
+          box-shadow: 0px -1px 12px 3px grey;
+
+          &::after {
+            content: "";
+            border: 10px solid transparent;
+            border-bottom-color: #fff;
+            position: absolute;
+            right: 10px;
+            top: -20px;
+          }
+
+          .operation {
+            padding: 5px;
+
+            li {
+              font-size: 12px;
+              color: #666;
+              line-height: 34px;
+              padding: 0 5px;
+
+              &:first-child {
+                border-bottom: 1px solid #eaeaea;
+              }
+
+              &:last-child {
+                border-top: 1px solid #eaeaea;
+              }
+
+              &:hover {
+                background-color: #f3f4f6;
+                cursor: pointer;
+              }
+
+              a {
+                font-size: 12px;
+                color: #666;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
