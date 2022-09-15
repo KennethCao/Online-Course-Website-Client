@@ -1,0 +1,38 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+.category-bar{
+  min-width: 1205px;
+  height: 40px;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,.04);
+  background: linear-gradient(#f7f6f8, #fff, 20%);
+  .content{
+    height: 100%;
+    background-color: #fff;
+    dl{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      dt{
+        font-size: 16px;
+        color: #949fab;
+      }
+      dd{
+        line-height: 30px;
+        margin-left: 15px;
+        padding: 0 10px;
+        color: #6b6578;
+        cursor: pointer;
+
+        //box-sizing: border-box;//尺寸未设置，方案行不通
+        border: 1px solid transparent;
+        &.selected{
+          color: @themeColor;
+          //border: 1px solid @themeColor;
+          border-color: @themeColor;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}

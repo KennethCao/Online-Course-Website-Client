@@ -1,0 +1,68 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+.teacher-item{
+  padding: 15px;
+  box-sizing: border-box;
+  // 高度需要根据“简介”的内容去自适应，宽度默认是版心的100%
+  .intro{
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+
+    display: flex;
+    align-items: center;
+    .message{
+      height: 100%;
+      flex: 1;
+
+      display: flex;
+      align-items: center;
+
+      .t-header{
+        width: 60px;
+        height: 60px;
+        border: 1px solid @themeColor;
+        box-sizing: border-box;
+        border-radius: 15px;
+      }
+      .t-profile{
+        height: 60px;
+        flex: 1;
+        padding: 10px 0 0 20px;
+
+        .position-name{
+          font-size: 18px;
+          color: #424242;
+          &.is-star::after{
+            content: "星级讲师";
+            font-size: 12px;
+            color: #a5571b;
+            background-color: #ffd2af;
+            padding: 0 5px;
+            border-radius: 3px;
+          }
+        }
+        .class-count{
+          margin-top: 8px;
+          font-size: 12px;
+          color: #999;
+        }
+      }
+    }
+    .to-detail{
+      width: 98px;
+      height: 34px;
+      color: @themeColor;
+      border: 1px solid @themeColor;
+      border-radius: 5px;
+      display: block;
+      text-align: center;
+      line-height: 34px;
+    }
+  }
+  .desc{
+    min-height: 80px;
+    line-height: 35px;
+    letter-spacing: 2px;
+  }
+}
