@@ -258,6 +258,7 @@ body{
   position: -webkit-sticky;
   // 阈值:当筛选条距离顶部为0就会触发吸顶效果
   top: 0;
+  z-index: 1000;
 
   min-width: 1205px;
   height: 40px;
@@ -293,121 +294,258 @@ body{
     }
   }
 }
-//.category-bar {
-//  //position: fixed;
-//  //left: 50%;
-//  //transform: translateX(-50%);
-//  //top: 60px;
-//
-//  // 粘性定位(黏糊糊)
-//  position: sticky;
-//  position: -webkit-sticky;
-//  top: 0;
-//  z-index: 1000;
-//
-//  min-width: 1205px;
-//  height: 40px;
-//  box-shadow: 0 5px 5px 0 rgba(0,0,0,.04);
-//  background: linear-gradient(#f7f6f8,#fff 20%);
-//  .content {
-//    height: 100%;
-//    background-color: #fff;
-//    dl {
-//      display: flex;
-//      align-items: center;
-//      height: 100%;
-//      dt {
-//        color: #949fab;
-//        font-size: 16px;
-//      }
-//      dd {
-//        line-height: 30px;
-//        margin-left: 15px;
-//        color: #6b6578;
-//        padding: 0 10px;
-//        cursor: pointer;
-//        border: 1px solid transparent;
-//        //box-sizing: border-box;
-//        &.selected {
-//          color: @themeColor;
-//          border-color: @themeColor;
-//          border-radius: 15px;
-//        }
-//      }
-//    }
-//  }
-//}
 
-// 讲师条目
-.teacher-list{
-  .teacher-item{
-    margin-top: 20px;
-    padding: 15px;
-    box-sizing: border-box;
-    background-color: #fff;
-    // 高度需要根据“简介”的内容去自适应，宽度默认是版心的100%
-    .intro{
-      height: 80px;
-      border-bottom: 1px solid #ccc;
+// 课程条目
+.course-list{
+    min-height: 500px;
+    padding-top: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    //justify-content: space-between;
+
+    // 课程卡片
+    .course-card {
+      min-width: 200px;
+      max-width: 300px;
+      height: 252px;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
 
       display: flex;
-      align-items: center;
-      .message{
-        height: 100%;
-        flex: 1;
+      flex-direction: column;
+      transition: all 1s linear 0s;
+      &:hover {
+        box-shadow: 1px 8px 10px 4px grey;
+        transform: translateY(-20px);
+      }
+      &>.image {
+        width: 100%;
+        height: 130px;
+        background-color: darkcyan;
 
-        display: flex;
-        align-items: center;
+        position: relative;
+        &>a {
+          width: 100%;
+          height: 100%;
+          display: block;
+          background-color: palegreen;
+          overflow: hidden;
+          &>img {
+            width: 100%;
+            height: 100%;
 
-        .t-header{
-          width: 60px;
-          height: 60px;
-          border: 1px solid @themeColor;
-          box-sizing: border-box;
-          border-radius: 15px;
-        }
-        .t-profile{
-          height: 60px;
-          flex: 1;
-          padding: 10px 0 0 20px;
-
-          .position-name{
-            font-size: 18px;
-            color: #424242;
-            &.is-star::after{
-              content: "星级讲师";
-              font-size: 12px;
-              color: #a5571b;
-              background-color: #ffd2af;
-              padding: 0 5px;
-              border-radius: 3px;
+            transition: all 2s ease-in-out 0s;
+            &:hover {
+              transform: scale(1.5, 1.5);
             }
           }
-          .class-count{
-            margin-top: 8px;
-            font-size: 12px;
-            color: #999;
+        }
+        &>.tag {
+          width: 48px;
+          height: 23px;
+          /*background-color: cyan;*/
+          background-image: url(../../assets/images/star_back.png);
+          background-position: -16px -57px;
+
+          font-size: 12px;
+          color: #fff;
+          text-align: center;
+          line-height: 23px;
+          position: absolute;
+          top: 5px;
+          left: 0;
+          z-index: 999;
+        }
+      }
+      &>.title {
+        flex: 2;
+        padding-left: 10px;
+        /*padding-top: 10px;*/
+        /*box-sizing: border-box;*/
+        /*background-color: pink;*/
+        &>a {
+          display: block;
+          font-size: 14px;
+          color: #333;
+          text-decoration: none;
+          margin-top: 10px;
+          &:hover {
+            color: tomato;
           }
         }
       }
-      .to-detail{
-        width: 98px;
-        height: 34px;
-        color: @themeColor;
-        border: 1px solid @themeColor;
-        border-radius: 5px;
-        display: block;
-        text-align: center;
-        line-height: 34px;
+      &>.score {
+        flex: 1;
+        /*background-color: green;*/
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        &>.star {
+          width: 57px;
+          height: 10px;
+          background-image: url(../../assets/images/star_back.png);
+          background-position: -91px -58px;
+          &>.y_star {
+            height: 100%;
+            background-image: url(../../assets/images/star_back.png);
+            background-position: -10px -158px;
+          }
+        }
+        &>.score_text {
+          font-size: 12px;
+          color: #777986;
+          margin-left: 10px;
+        }
+      }
+      &>.zan {
+        flex: 1;
+        padding-left: 10px;
+        &>.good {
+          font-size: 16px;
+          color: #777986;
+          &::before {
+            margin-right: 5px;
+            color: tomato;
+          }
+        }
       }
     }
-    .desc{
-      min-height: 80px;
-      line-height: 35px;
-      letter-spacing: 2px;
+    // 讲师卡片
+    .teacher-card{
+      background-color: #fff;
+      min-width: 300px;// 为了防止元素被挤压
+      height: 150px;
+      //background-color: tomato;
+      margin-top: 50px;
+      box-shadow: 2px -1px 10px 0 rgba(0,0,0,0.15);
+
+      // 头像和简介分为左右的两部分，使用flex布局最为便捷
+      // 但是需要注意的是，当组件被引入时，组件因界面被拉伸，简介不部分可以拉伸但是头像部分不可以
+      display: flex;
+      .left{
+        //background-color: darkcyan;
+        width: 200px;
+
+        position: relative;
+        .t-header{
+          width: 150px;
+          height: 150px;
+          border-radius: 75px;
+          box-shadow: 2px -1px 10px 0 rgba(0,0,0,0.15);
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          transform: translate(-50%);
+          &:hover{
+            animation: like-rotate 10s linear 0s infinite;
+          }
+        }
+        .t-name{
+          width: 150px;
+          line-height: 34px;
+          background-color: @themeColor;
+          border-radius: 17px;
+          color: #fff;
+          font-size: 18px;
+          position: absolute;
+          text-align: center;
+          left: 50%;
+          transform: translate(-50%);
+          bottom: 20px;
+
+        }
+      }
+      .right {
+        //background-color: deeppink;
+        flex: 1;
+        padding: 5px;//或者在t-position中添加margin，此处padding的方案更好，因为简介的文字贴边不好看
+
+        .t-position{
+          font-size: 20px;
+          text-align: center;
+          line-height: 40px;
+          color: @themeColor;
+          font-weight: 700;
+          border-bottom: 2px solid @themeColor;
+        }
+        .t-intro{
+          padding-top: 10px;
+          font-size: 16px;
+          color: #666;
+          letter-spacing: 2px;
+        }
+      }
+    }
+    // 新闻卡片
+    .news-card{
+      width: 500px;
+      //height: 100px;
+      background-color: #fff;
+      margin-top: 30px;
+
+      box-shadow: 2px -1px 10px 0 rgba(0,0,0,0.15);
+      ul{
+        padding: 5px 10px;
+        li{
+          line-height: 36px;
+          display: flex;
+          justify-content: space-between;
+          a{
+            color: #333;
+            font-size: 15px;
+            &:hover{
+              color: @themeColor;
+            }
+
+            // 超出部分不换行、并使用省略号代替
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+          span{
+            // 当新闻简介部分挤压时间部分时，会导致时间部分换行，此时设置最小宽度
+            min-width: 190px;
+            color: #999;
+            font-size: 15px;
+
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+
+    // 额外定义一些特定的类名, 给使用组件容器的开发人员来使用
+    // 类名 -> 各个卡片组件上面
+    // 自动的给他分配空间, 以及调整间距
+    .column5 {
+      width: ~"calc((100% - 4 * 30px) / 5)";
+      margin-bottom: 30px;
+
+      &:not(:nth-child(5n+1)) {
+        margin-left: 30px;
+      }
+    }
+
+    .column3 {
+      width: ~"calc((100% - 2 * 30px) / 3)";
+      margin-bottom: 30px;
+
+      &:not(:nth-child(3n+1)) {
+        margin-left: 30px;
+      }
+    }
+
+    .column2 {
+      width: ~"calc((100% - 1 * 30px) / 2)";
+      margin-bottom: 30px;
+
+      &:not(:nth-child(2n+1)) {
+        margin-left: 30px;
+      }
     }
   }
-}
 
 // 固定条目
 .fixed-contact{
