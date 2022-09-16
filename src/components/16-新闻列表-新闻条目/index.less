@@ -1,0 +1,42 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+.article-item{
+  padding: 5px;
+  border-bottom: 1px solid #999;
+  background-color: #fff;
+  .top{
+    height: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title{
+      font-size: 16px;
+      color: #424242;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &:hover{
+        color: @themeColor;
+      }
+    }
+    .time{
+      min-width: 190px;
+      text-align: right;
+      font-size: 14px;
+      color: #999;
+    }
+  }
+  .bottom{
+    min-height: 50px;
+    font-size: 14px;
+    color: #999;
+    letter-spacing: 2px;
+    line-height: 20px;
+    // 首行缩进2字符
+    text-indent: 2em;
+  }
+}
