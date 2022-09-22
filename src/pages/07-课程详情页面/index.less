@@ -1,0 +1,861 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+body{
+  background-color: rgb(245,245,245);
+}
+
+// 1. mini导航栏
+.navbar-mini{
+  height: 60px;
+  min-width: 1205px;
+  background-image: url(../../assets/images/bg_nav_rep.png);
+  background-repeat: repeat-x;
+  .content{
+    height: 100%;
+
+    display: flex;
+    .left{
+      flex:3;
+      //background-color: tomato;
+
+      display: flex;
+      .logo {
+        width: 177px;
+        height: 60px;
+        margin: 0;
+
+        a {
+          height: 100%;
+          width: 100%;
+          display: block;
+          font-size: 0;
+          background-image: url(../../assets/images/logo-mini.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+      .menu {
+        //background-color: tomato;
+        height: 100%;
+        display: flex;
+        li {
+          //background-color: cyan;
+          //padding: 0 20px;
+          position: relative;
+          &.current,// 实现定位效果的显示
+          &:hover {
+            a {
+              color: @themeColor;
+            }
+            &::after {//设置下划线效果
+              content: "";
+              display: block;
+              width: ~"calc(100% - 40px)";//less中使用JS动态计算下划线效果中下划线的长度
+              height: 5px;
+              background-color: @themeColor;
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+
+          a {
+            //width: 100%;
+            height: 100%;
+            line-height: 60px;
+            //background-color: red;
+            display: block;
+            padding: 0 20px; //内边距的设置从li改到a是为了实现“连在一起”的效果，且不可与width重复设置
+            font-size: 18px;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .center{
+      flex:2;
+      //background-color: pink;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .search-bar {
+        width: 300px;
+        height: 40px;
+        margin: 0 auto;
+        background-color: #444;
+        border-radius: 20px;
+        border: 1px solid #999;
+
+        box-sizing: border-box;
+        overflow: hidden;
+
+        display: flex;
+
+        .category {
+          //background-color: cyan;
+          flex: 3;
+          border-radius: 20px 0 0 20px;
+
+          select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            padding-left: 10px;
+            outline: none;
+            font-size: 15px;
+            color: #fff;
+            background-color: transparent;
+            option{
+              background-color: #444;
+            }
+          }
+        }
+
+        .keyword {
+          //background-color: darkcyan;
+          flex: 8;
+
+          input {
+            width: 100%;
+            height: 100%;
+            padding: 0 0 0 10px;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 14px;
+            background-color: transparent;
+          }
+        }
+
+        .submit-btn {
+          //background-color: darkred;
+          flex: 2;
+          border-radius: 0 20px 20px 0;
+
+          input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            border-radius: 0 20px 20px 0;
+            background-color: transparent;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+          }
+        }
+      }
+
+    }
+    .right{
+      flex:2;
+      //background-color: darkcyan;
+
+      display: flex;
+      justify-content: flex-end;
+      .intro {
+        width: fit-content;
+        height: 60px;
+        //background-color: cyan;
+
+        position: relative;
+
+        &:hover .operation-pane {
+          display: block;
+        }
+
+        display: flex;
+        align-items: center;
+        .user {
+          width: fit-content;
+          height: 32px;
+          //background-color: red;
+
+          display: flex;
+          align-items: center;
+
+          .nickname {
+            margin-right: 10px;
+            font-size: 16px;
+            color: #fff;
+          }
+
+          .header {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+          }
+        }
+
+        .operation-pane {
+          width: 160px;
+          //height: 300px;
+          background-color: #fff;
+
+          position: absolute;
+          z-index: 999;
+          right: 0;
+          top: 60px;
+          display: none;
+
+          border: 1px solid #eee;
+
+          box-shadow: 0px -1px 12px 3px grey;
+
+          &::after {
+            content: "";
+            border: 10px solid transparent;
+            border-bottom-color: #fff;
+            position: absolute;
+            right: 10px;
+            top: -20px;
+          }
+
+          .operation {
+            padding: 5px;
+
+            li {
+              font-size: 12px;
+              color: #666;
+              line-height: 34px;
+              padding: 0 5px;
+
+              &:first-child {
+                border-bottom: 1px solid #eaeaea;
+              }
+
+              &:last-child {
+                border-top: 1px solid #eaeaea;
+              }
+
+              &:hover {
+                background-color: #f3f4f6;
+                cursor: pointer;
+              }
+
+              a {
+                font-size: 12px;
+                color: #666;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 2. 面包屑导航
+.bread-nav{
+  background-color: #fff;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+
+  min-width: 1205px;
+  height: 50px;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,.04);
+  .content{
+    height: 100%;
+    ul{
+      height: 100%;
+      display: flex;
+      li{
+        display: flex;
+        align-items: center;
+        a{
+          display: block;
+          //width: 100%;
+          height: 100%;
+          text-align: center;
+          line-height: 50px;
+          padding: 0 15px;
+
+          font-size: 16px;
+          color: #666;
+
+          &:hover{
+            color: @themeColor;
+          }
+        }
+        &:not(:first-child):before{
+          content: ">";
+        }
+      }
+    }
+  }
+}
+
+// 内容区域 版心
+.course-detail-content{
+  padding-top: 15px;
+  // 3. 课程简介卡片
+  .course-intro-pane{
+    height: 290px;
+    background-color: #fff;
+
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    .left{
+      width: 450px;
+      height: 250px;
+      .course-fm{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .right{
+      flex: 1;
+      padding-left: 20px;
+      //background-color: darkcyan;
+      height: 250px;
+
+      // 利用flex布局将讲师名称这个元素的底部高度撑开
+      display: flex;
+      flex-direction: column;
+      .course-title{
+        font-size: 24px;
+        color: #333;
+      }
+      .comment-message{
+        font-size: 12px;
+        color: #666;
+
+        // 使标题、评论信息、讲师名称之间有一定的间距
+        margin: 15px 0;
+      }
+      .teacher-name{
+        font-size: 18px;
+        color: #333;
+        flex: 1;
+      }
+      .get-course{
+        display: block;
+        width: 160px;
+        height: 45px;
+        background-color: #ff8000;
+        color: #fff;
+        font-size: 20px;
+        line-height: 45px;
+        text-align: center;
+      }
+    }
+  }
+
+  // 4. 容器组件 + 内容组件
+  .detail-container{
+    // 之后会将它放进另外一个容器当中，宽度不必要设置，默认100%顶满
+    // 高度也不用设置，之后靠内容去撑
+    //background-color: grey;
+    &>.top{
+      border-top: 1px solid #eaeaea;
+      background-color: #fafafa;
+      height: 36px;
+      .tabs{
+        height: 100%;
+        //background-color: palegoldenrod;
+
+        display: flex;
+        li{
+          padding: 0 15px;
+          //background-color: green;
+          line-height: 36px;
+          font-size: 16px;
+          color: #333;
+          cursor: pointer;
+          &:hover{
+            color: @themeColor;
+          }
+          &.current{
+            color: #fff;
+            background-color: #ccc;
+            &:hover{
+              background-color: @themeColor;
+            }
+          }
+
+        }
+      }
+    }
+    &>.bottom{
+      display: flex;
+      min-height: 400px;
+      margin-top: 20px;
+      &>.left{
+        flex: 1;
+        background-color: #fff;
+        margin-right: 20px;
+        // 课程大纲组件 分配的空间尺寸没有内容撑开的空间尺寸的优先级大，使得该组件整个撑开
+        overflow: hidden;
+        padding: 15px;
+        .panes{
+          width: 100%;
+          //height: 100%;
+
+          //position: relative;
+          li{
+            width: 100%;
+            //height: 100%;
+            //background-color: lightcyan;
+
+            // 标准流靠内容将盒子撑大，li高了则ul高了，ul高了整个盒子就高了
+            // 再加上选项卡的切换状态已经通过JS实现，就不需要使用定位流使得选项卡叠加
+            //position: absolute;
+            //top: 0;
+            //left: 0;
+            display: none;
+
+            &.current{
+              display: block;
+            }
+
+            .course-dg{
+              //background-color: grey;
+              // 临时高度,具体要看大纲有多少
+              //height: 200px;
+
+              // 课程播放页面中也存在课程大纲的组件，但是没有“立即观看”的按钮，所以通过样式去控制，以简便开发
+              &.no-view{
+                .c-view{
+                  display: none;
+                }
+              }
+
+              position: relative;
+              .dg{
+                &::before{
+                  content:"";
+                  width: 1px;
+                  height: 100%;
+                  background-color: #ccc;
+
+                  position: absolute;
+                  top: 0;
+                  left: 68px;
+                }
+                li{
+                  line-height: 40px;
+                  //background-color: darkcyan;
+                  display: flex;
+                  align-items: center;
+                  cursor: default;
+                  // 下面凡是涉及到字体颜色的都是一样的，且当实现hover样式时因为优先级放在下面的元素上会使得hover的样式无法显现，故加在li上，让下面自己去继承
+                  color: #999;
+                  &:hover{
+                    color: @themeColor;
+                    // a标签比较特殊，不会继承li中的字体颜色
+                    .c-view{
+                      color: @themeColor;
+                      border-color: @themeColor;
+                    }
+                  }
+                  .c-num{
+                    width: 60px;
+                    //background-color: cyan;
+                    font-size: 12px;
+                  }
+                  .c-progress{
+                    width: 16px;
+                    height: 14px;
+                    background-color: #fff;
+                    z-index: 9;
+                    //background-color: green;
+                    background-image: url(../../assets/images/listIcons.png);
+                    background-position: -136px -113px;
+                    &.no-finish{
+                      background-image: url(../../assets/images/listIcons.png);
+                      background-position: -169px -113px;
+                    }
+                    &.finished{
+                      background-image: url(../../assets/images/listIcons.png);
+                      background-position: -200px -113px;
+                    }
+                  }
+                  .c-title{
+                    flex: 1;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+
+                    font-size: 14px;
+                    //color: #999;
+                    padding-left: 10px;
+
+                  }
+                  .c-view{
+                    width: 70px;
+                    line-height: 30px;
+                    border: 1px solid #999;
+                    border-radius: 5px;
+
+                    font-size: 12px;
+                    // a标签比较特殊，不会继承li中的字体颜色
+                    color: #999;
+                    text-align: center;
+
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &>.right{
+        width: 290px;
+        //background-color: #fff;
+
+        // 关联的讲师卡片
+        .c-teacher{
+          max-width: 300px;
+          height: 165px;
+          background-color: #fff;
+          box-shadow: 0 1px 2px #bbb;
+
+          a{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            .top{
+              flex: 1;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img{
+                width: 75px;
+                height: 75px;
+              }
+            }
+            .bottom{
+              border-top: 1px solid #eee;
+              //height: 50px;
+              font-size: 13px;
+              color: #666;
+              text-align: center;
+              line-height: 50px;
+            }
+          }
+
+
+        }
+        // 评论面板
+        .comment-pane{
+          overflow: hidden;
+          max-width: 300px;
+          box-shadow: 0 1px 2px #bbb;
+          background-color: #fff;
+          margin: 15px 0;
+
+          .comment-title{
+            line-height: 50px;
+            font-size: 18px;
+            color: #000;
+            padding-left: 20px;
+            border-bottom: 1px solid #bbb;
+          }
+          .form-pane{
+            padding: 15px;
+            .comment-score{
+              display: flex;
+              align-items: center;
+              span{
+                font-size: 14px;
+                color: #000;
+                margin-right: 15px;
+              }
+              .star {
+                width: 57px;
+                height: 10px;
+                background-image: url(../../assets/images/star_back.png);
+                background-position: -91px -58px;
+                &>.y_star {
+                  height: 100%;
+                  background-image: url(../../assets/images/star_back.png);
+                  background-position: -10px -158px;
+                  transition: width 0.3s linear;
+                }
+              }
+            }
+            .comment-content{
+              width: 100%;
+              height: 80px;
+              margin-top: 10px;
+              box-sizing: border-box;
+              resize: none;
+              outline: none;
+            }
+            .submit{
+              float: right;
+              border: 1px solid #e1251b;
+              border-radius: 5px;
+              margin: 10px 5px;
+              line-height: 20px;
+              padding: 5px 10px;
+              color: #e1251b;
+              background-color: #fff;
+              cursor: pointer;
+            }
+          }
+        }
+        // 评价列表
+        .comment-list{
+          max-width: 300px;
+          box-shadow: 0 1px 2px #bbb;
+          background-color: #fff;
+
+          .comment-title{
+            line-height: 50px;
+            font-size: 18px;
+            color: #000;
+            padding-left: 20px;
+            border-bottom: 1px solid #bbb;
+          }
+          .comment-items{
+            padding: 5px 10px;
+            .comment-item{
+              margin-top: 5px;
+              &:not(:last-child){
+                border-bottom: 1px solid #999;
+              }
+              .top{
+                height: 35px;
+
+                display: flex;
+                .user-header{
+                  height: 35px;
+                  width: 35px;
+                }
+                .message{
+                  padding-left: 10px;
+                  flex: 1;
+
+                  display: flex;
+                  flex-direction: column;
+                  .message-top{
+                    flex: 1;
+
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .user-name{
+                      font-size: 16px;
+                      color: #000;
+                    }
+                    .star {
+                      width: 57px;
+                      height: 10px;
+                      background-image: url(../../assets/images/star_back.png);
+                      background-position: -91px -58px;
+                      &>.y_star {
+                        height: 100%;
+                        background-image: url(../../assets/images/star_back.png);
+                        background-position: -10px -158px;
+                        transition: width 0.3s linear;
+                      }
+                    }
+                  }
+                  .comment-time{
+                    font-size: 12px;
+                    color: #999;
+                  }
+                }
+              }
+              .content{
+                padding: 15px;
+                font-size: 16px;
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// 5. 底部
+.footer {
+  margin-top: 100px;
+  height: 185px;
+  background-color: #474443;
+  .content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .left {
+      height: 105px;
+      flex: 2;
+      //background-color: darkcyan;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .intro {
+        font-size: 14px;
+        color: #fff;
+      }
+      .friend-link {
+        display: flex;
+        li {
+          a {
+            color: #fff;
+            font-size: 14px;
+            &:hover {
+              color: @themeColor;
+            }
+          }
+          //background-color: cyan;
+          &:not(:first-child) {
+            margin-left: 20px;
+          }
+        }
+      }
+      .ban {
+        font-size: 14px;
+        color: #999;
+      }
+    }
+    .right {
+      text-align: right;
+      height: 105px;
+      flex: 1;
+      //background-color: deeppink;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .ad-image {
+        height: 46px;
+        //background-color: darkcyan;
+        display: flex;
+        justify-content: flex-end;
+        .left-ad,
+        .right-ad {
+          width: 46px;
+          height: 46px;
+          background-image: url(../../assets/images/layout_css_sprites2.png);
+          cursor: pointer;
+
+          &:hover {
+            .ewm-pane {
+              display: block;
+            }
+          }
+
+          position: relative;
+          .ewm-pane {
+            width: 120px;
+            height: 120px;
+            box-shadow: 0 0 10px #ccc;
+            padding: 5px;
+            //宽高设置以后，额外添加padding会扩展整个盒子的尺寸
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -125px;
+            display: none;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+        }
+        .left-ad {
+          background-position: -112px -74px;
+          &:hover {
+            background-position: -154px -174px;
+          }
+        }
+        .right-ad {
+          background-position: -220px -174px;
+          margin-left: 20px;
+          &:hover {
+            background-position: -286px -174px;
+          }
+        }
+      }
+      .second-line {
+        font-size: 14px;
+        color: #fff;
+        .time {
+          padding-left: 10px;
+          font-size: 12px;
+          color: #ddd;
+        }
+      }
+      .tel {
+        font-size: 19px;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// 6. 右侧固定组件
+.fixed-contact{
+  width: 50px;
+  height: 200px;
+  //background-color: tomato;
+  position: fixed;
+  right: 30px;
+  top: 30%;
+  transform: translateY(-50%);
+  .contact,
+  .app,
+  .back-top{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+  }
+  .contact{
+    margin-bottom: 50px;
+    background-image: url(../../assets/images/layout_css_sprites2.png);
+    background-position: -83px -174px;
+
+    &:hover{
+      background-position: -11px -174px;
+    }
+  }
+  .app{
+    background-image: url(../../assets/images/layout_css_sprites.png);
+    background-position: -4px -94px;
+    &:hover {
+      background-color: #ddd;
+      .ewm-pane {
+        display: block;
+      }
+    }
+
+    position: relative;
+    .ewm-pane {
+      width: 120px;
+      height: 120px;
+      box-shadow: 0 0 10px #ccc;
+      padding: 5px;
+      //宽高设置以后，额外添加padding会扩展整个盒子的尺寸
+      box-sizing: border-box;
+      position: absolute;
+      left: -130px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: none;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .back-top{
+    background-image: url(../../assets/images/layout_css_sprites.png);
+    background-position: -166px 2px;
+  }
+}

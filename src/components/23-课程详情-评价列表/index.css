@@ -1,0 +1,67 @@
+@import "../../css/base.css";
+.comment-list {
+  max-width: 300px;
+  box-shadow: 0 1px 2px #bbb;
+}
+.comment-list .comment-title {
+  line-height: 50px;
+  font-size: 18px;
+  color: #000;
+  padding-left: 20px;
+  border-bottom: 1px solid #bbb;
+}
+.comment-list .comment-items {
+  padding: 5px 10px;
+}
+.comment-list .comment-items .comment-item {
+  margin-top: 5px;
+}
+.comment-list .comment-items .comment-item:not(:last-child) {
+  border-bottom: 1px solid #999;
+}
+.comment-list .comment-items .comment-item .top {
+  height: 35px;
+  display: flex;
+}
+.comment-list .comment-items .comment-item .top .user-header {
+  height: 35px;
+  width: 35px;
+}
+.comment-list .comment-items .comment-item .top .message {
+  padding-left: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.comment-list .comment-items .comment-item .top .message .message-top {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment-list .comment-items .comment-item .top .message .message-top .user-name {
+  font-size: 16px;
+  color: #000;
+}
+.comment-list .comment-items .comment-item .top .message .message-top .star {
+  width: 57px;
+  height: 10px;
+  background-image: url(../../assets/images/star_back.png);
+  background-position: -91px -58px;
+}
+.comment-list .comment-items .comment-item .top .message .message-top .star > .y_star {
+  height: 100%;
+  background-image: url(../../assets/images/star_back.png);
+  background-position: -10px -158px;
+  transition: width 0.3s linear;
+}
+.comment-list .comment-items .comment-item .top .message .comment-time {
+  font-size: 12px;
+  color: #999;
+}
+.comment-list .comment-items .comment-item .content {
+  padding: 15px;
+  font-size: 16px;
+  color: #000;
+}
+/*# sourceMappingURL=index.css.map */

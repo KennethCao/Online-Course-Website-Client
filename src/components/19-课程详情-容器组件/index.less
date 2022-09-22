@@ -1,0 +1,73 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+.detail-container{
+  // 之后会将它放进另外一个容器当中，宽度不必要设置，默认100%顶满
+  // 高度也不用设置，之后靠内容去撑
+  background-color: grey;
+  .top{
+    background-color: #fff;
+    height: 36px;
+    .tabs{
+      height: 100%;
+      //background-color: palegoldenrod;
+
+      display: flex;
+      li{
+        padding: 0 15px;
+        //background-color: green;
+        line-height: 36px;
+        font-size: 16px;
+        color: #333;
+        cursor: pointer;
+        &:hover{
+          color: @themeColor;
+        }
+        &.current{
+          color: #fff;
+          background-color: #ccc;
+          &:hover{
+            background-color: @themeColor;
+          }
+        }
+
+      }
+    }
+  }
+  .bottom{
+    display: flex;
+    min-height: 400px;
+    margin-top: 20px;
+    .left{
+      flex: 1;
+      background-color: orange;
+      margin-right: 20px;
+      .panes{
+        width: 100%;
+        //height: 100%;
+
+        //position: relative;
+        li{
+          width: 100%;
+          //height: 100%;
+          background-color: lightcyan;
+
+          // 标准流靠内容将盒子撑大，li高了则ul高了，ul高了整个盒子就高了
+          // 再加上选项卡的切换状态已经通过JS实现，就不需要使用定位流使得选项卡叠加
+          //position: absolute;
+          //top: 0;
+          //left: 0;
+          display: none;
+
+          &.current{
+            display: block;
+          }
+        }
+      }
+    }
+    .right{
+      width: 290px;
+      background-color: pink;
+    }
+  }
+}

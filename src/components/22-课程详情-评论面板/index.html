@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论面板</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="comment-pane">
+    <div class="comment-title">
+        评论
+    </div>
+    <div class="form-pane">
+        <div class="comment-score">
+            <span>给该课打分:</span>
+            <div class="star">
+                <div class="y_star" style="width: 100%;"></div>
+            </div>
+        </div>
+        <label>
+            <textarea class="comment-content" placeholder="请输入对该课程的评价"></textarea>
+        </label>
+        <div class="submit">评论</div>
+    </div>
+</div>
+
+<script>
+    let score = 0;
+    // 1. 星星评分效果
+    let star = document.querySelector(".comment-pane .star");
+    let y_star = document.querySelector(".comment-pane .y_star");
+
+    star.onclick = function (event) {
+        // 鼠标点击的位置：通过offsetX
+        // 一颗星星一颗星星地加
+        score = Math.ceil(event.offsetX / star.offsetWidth * 5) / 5 * 100;
+        y_star.style.width = score + "%";
+    }
+</script>
+<script>
+    // 2. 点击评论按钮之后，获取用户的评论信息（分数、评论内容）
+    let submit = document.getElementsByClassName("submit")[0];
+    let comment = document.getElementsByClassName("comment-content")[0];
+    star.onclick = function (event) {
+        // 获取分数和评论的内容
+        let content_v = comment.value;
+        // 借助网络请求调用对应的接口，将分数和评论信息传递给服务器（预留位置）
+
+    }
+
+</script>
+</body>
+</html>

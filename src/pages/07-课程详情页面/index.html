@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课程详情页面</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- 1. mini导航栏 -->
+<div class="navbar-mini">
+    <div class="content bx">
+        <div class="left">
+            <h1 class="logo">
+                <a href="#">撩学堂</a>
+            </h1>
+            <ul class="menu">
+                <li><a href="#">讲师</a></li>
+                <li class="current"><a href="#">课程</a></li>
+                <li><a href="#">文章</a></li>
+            </ul>
+        </div>
+        <div class="center">
+            <form action="">
+                <div class="search-bar">
+                    <div class="category">
+                        <label>
+                            <select name="category">
+                                <option value="all">全部</option>
+                                <option value="course">课程</option>
+                                <option value="teacher">讲师</option>
+                                <option value="article">文章</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="keyword">
+                        <label>
+                            <input type="text" placeholder="请输入搜索关键字" name="kw">
+                        </label>
+                    </div>
+                    <div class="submit-btn">
+                        <label>
+                            <input type="submit" value="&#xe662;" class="iconfont">
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <div class="intro">
+                <div class="user">
+                    <span class="nickname">用户昵称:sz</span>
+                    <img class="header" src="../../assets/images/header.png" alt="">
+                </div>
+                <div class="operation-pane">
+                    <ul class="operation">
+                        <li><a href="#">撩课学院 - itlike.com</a></li>
+                        <li>我的学习</li>
+                        <li>设置</li>
+                        <li class="exit">推出</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 2. 面包屑导航 -->
+<div class="bread-nav">
+    <div class="content bx">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">课程列表</a></li>
+            <li><a href="#">课程详情</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="course-detail-content bx">
+    <!-- 3. 课程简介卡片 -->
+    <div class="course-intro-pane">
+        <div class="left">
+            <img class="course-fm" src="../../assets/images/course_img.png" alt="">
+        </div>
+        <div class="right">
+            <h3 class="course-title">极系列-H5课程</h3>
+            <p class="comment-message">评分: 4.16667 分&emsp;&emsp;评价人数: 12 人</p>
+            <p class="teacher-name">讲师: 神雕</p>
+            <a class="get-course" href="#">立即学习</a>
+        </div>
+    </div>
+
+    <!-- 4. 容器组件 + 内容组件 -->
+    <div class="detail-container">
+        <div class="top">
+            <ul class="tabs">
+                <li class="current">课程介绍</li>
+                <li>课程大纲</li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <div class="left">
+                <ul class="panes">
+                    <li class="current">内容面板1</li>
+                    <li>
+                        <!--     课程大纲组件     -->
+                        <div class="course-dg">
+                            <ul class="dg">
+                                <li>
+                                    <span class="c-num">课时1: </span>
+                                    <span class="c-progress finished"></span>
+                                    <span class="c-title">Python爬虫-必备基础-概述</span>
+                                    <a href="#" class="c-view">立即观看</a>
+                                </li>
+                                <li>
+                                    <span class="c-num">课时1: </span>
+                                    <span class="c-progress no-finish"></span>
+                                    <span class="c-title">Python爬虫-必备基础-概述</span>
+                                    <a href="#" class="c-view">立即观看</a>
+                                </li>
+                                <li>
+                                    <span class="c-num">课时1: </span>
+                                    <span class="c-progress"></span>
+                                    <span class="c-title">Python爬虫-必备基础-概述</span>
+                                    <a href="#" class="c-view">立即观看</a>
+                                </li>
+                                <li>
+                                    <span class="c-num">课时1: </span>
+                                    <span class="c-progress no-finish"></span>
+                                    <span class="c-title">Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述</span>
+                                    <a href="#" class="c-view">立即观看</a>
+                                </li>
+                                <li>
+                                    <span class="c-num">课时1: </span>
+                                    <span class="c-progress"></span>
+                                    <span class="c-title">Python爬虫-必备基础-概述</span>
+                                    <a href="#" class="c-view">立即观看</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <!--  关联的讲师卡片  -->
+                <div class="c-teacher">
+                    <a href="#">
+                        <div class="top">
+                            <img src="../../assets/images/zsf.jpg" alt="">
+                        </div>
+                        <div class="bottom">
+                            腾讯CEO
+                        </div>
+                    </a>
+                </div>
+                <!--  评论面板  -->
+                <div class="comment-pane">
+                    <div class="comment-title">
+                        评论
+                    </div>
+                    <div class="form-pane">
+                        <div class="comment-score">
+                            <span>给该课打分:</span>
+                            <div class="star">
+                                <div class="y_star" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <label>
+                            <textarea class="comment-content" placeholder="请输入对该课程的评价"></textarea>
+                        </label>
+                        <div class="submit">评论</div>
+                    </div>
+                </div>
+                <!--  评价列表  -->
+                <div class="comment-list">
+                    <div class="comment-title">
+                        评论
+                    </div>
+                    <div class="comment-items">
+                        <div class="comment-item">
+                            <div class="top">
+                                <img class="user-header" src="../../assets/images/zsf.jpg" alt="">
+                                <div class="message">
+                                    <div class="message-top">
+                                        <span class="user-name">撩课-sz</span>
+                                        <div class="star">
+                                            <div class="y_star" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-time">
+                                        2022年10月22日 17:14:21
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                课程真不错呀
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                            <div class="top">
+                                <img class="user-header" src="../../assets/images/zsf.jpg" alt="">
+                                <div class="message">
+                                    <div class="message-top">
+                                        <span class="user-name">撩课-sz</span>
+                                        <div class="star">
+                                            <div class="y_star" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-time">
+                                        2022年10月22日 17:14:21
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                课程真不错呀
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                            <div class="top">
+                                <img class="user-header" src="../../assets/images/zsf.jpg" alt="">
+                                <div class="message">
+                                    <div class="message-top">
+                                        <span class="user-name">撩课-sz</span>
+                                        <div class="star">
+                                            <div class="y_star" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-time">
+                                        2022年10月22日 17:14:21
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                课程真不错呀
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                            <div class="top">
+                                <img class="user-header" src="../../assets/images/zsf.jpg" alt="">
+                                <div class="message">
+                                    <div class="message-top">
+                                        <span class="user-name">撩课-sz</span>
+                                        <div class="star">
+                                            <div class="y_star" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-time">
+                                        2022年10月22日 17:14:21
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                课程真不错呀
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                            <div class="top">
+                                <img class="user-header" src="../../assets/images/zsf.jpg" alt="">
+                                <div class="message">
+                                    <div class="message-top">
+                                        <span class="user-name">撩课-sz</span>
+                                        <div class="star">
+                                            <div class="y_star" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-time">
+                                        2022年10月22日 17:14:21
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                课程真不错呀
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 5. 底部 -->
+<div class="footer">
+    <div class="content bx">
+        <div class="left">
+            <p class="intro">撩课云课堂 是掘智公司（itlike.com）旗下专注职业技能提升的在线学习平台。</p>
+            <ul class="friend-link">
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">帮助中心</a></li>
+                <li><a href="#">撩课论坛</a></li>
+            </ul>
+            <p class="ban">©2018-2020 课程内容版权均归 撩课教育 所有 沪ICP备18036896号</p>
+        </div>
+        <div class="right">
+            <div class="ad-image">
+                <div class="left-ad">
+                    <div class="ewm-pane">
+                        <img src="../../assets/images/ewm_lk.jpg" alt="">
+                    </div>
+                </div>
+                <div class="right-ad">
+                    <div class="ewm-pane">
+                        <img src="../../assets/images/ewm_lk.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="second-line">
+                客服热线 <span class="time">09:00-19:00</span>
+            </p>
+            <p class="tel">0554-66666666</p>
+        </div>
+    </div>
+</div>
+
+<!-- 6. 右侧固定组件 -->
+<div class="fixed-contact">
+    <div class="contact">
+
+    </div>
+    <div class="app">
+        <div class="ewm-pane">
+            <img src="../../assets/images/ewm_lk.jpg" alt="">
+        </div>
+    </div>
+    <div class="back-top">
+
+    </div>
+</div>
+
+<script>
+    // 容器组件选项卡切换
+    // 0. 通过变量，记录当前选中的索引值
+    let currentIndex = 0;
+    // 1. 获取所有选项卡和面板元素
+    let tabs = document.querySelectorAll(".tabs>li");
+    let panes = document.querySelectorAll(".panes>li");
+    // 2. 每一个选项卡监听对应的鼠标单击事件
+    for (let i = 0, len = tabs.length; i < len; i++){
+        let tab = tabs[i];
+        tab.onclick = function (){
+            // 2.1 切换选项卡的选中状态
+            tabs[currentIndex].className = "";
+            tabs[i].className = "current";
+            // 2.2 切换面板的显示（联动）
+            panes[currentIndex].className = "";
+            panes[i].className = "current";
+            currentIndex = i;
+        };
+    }
+</script>
+<script>
+    let score = 0;
+    // 1. 星星评分效果
+    let star = document.querySelector(".comment-pane .star");
+    let y_star = document.querySelector(".comment-pane .y_star");
+
+    star.onclick = function (event) {
+        // 鼠标点击的位置：通过offsetX
+        // 一颗星星一颗星星地加
+        score = Math.ceil(event.offsetX / star.offsetWidth * 5) / 5 * 100;
+        y_star.style.width = score + "%";
+    }
+</script>
+<script>
+    // 2. 点击评论按钮之后，获取用户的评论信息（分数、评论内容）
+    let submit = document.getElementsByClassName("submit")[0];
+    let comment = document.getElementsByClassName("comment-content")[0];
+    star.onclick = function (event) {
+        // 获取分数和评论的内容
+        let content_v = comment.value;
+        // 借助网络请求调用对应的接口，将分数和评论信息传递给服务器（预留位置）
+
+    }
+
+</script>
+</body>
+</html>

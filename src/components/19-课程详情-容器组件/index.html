@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课程详情-容器</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="detail-container">
+    <div class="top">
+        <ul class="tabs">
+            <li class="current">选项卡1</li>
+            <li>选项卡2</li>
+        </ul>
+    </div>
+    <div class="bottom">
+        <div class="left">
+            <ul class="panes">
+                <li class="current">内容面板1</li>
+                <li>内容面板2</li>
+            </ul>
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+</div>
+<script>
+    // 0. 通过变量，记录当前选中的索引值
+    let currentIndex = 0;
+    // 1. 获取所有选项卡和面板元素
+    let tabs = document.querySelectorAll(".tabs>li");
+    let panes = document.querySelectorAll(".panes>li");
+    // 2. 每一个选项卡监听对应的鼠标单击事件
+    for (let i = 0, len = tabs.length; i < len; i++){
+        let tab = tabs[i];
+        tab.onclick = function (){
+            // 2.1 切换选项卡的选中状态
+            tabs[currentIndex].className = "";
+            tabs[i].className = "current";
+            // 2.2 切换面板的显示（联动）
+            panes[currentIndex].className = "";
+            panes[i].className = "current";
+            currentIndex = i;
+        };
+    }
+</script>
+</body>
+</html>
