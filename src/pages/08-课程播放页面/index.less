@@ -1,0 +1,623 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+//1. mini导航栏
+.navbar-mini{
+  height: 60px;
+  min-width: 1205px;
+  background-image: url(../../assets/images/bg_nav_rep.png);
+  background-repeat: repeat-x;
+  .content{
+    height: 100%;
+
+    display: flex;
+    .left{
+      flex:3;
+      //background-color: tomato;
+
+      display: flex;
+      .logo {
+        width: 177px;
+        height: 60px;
+        margin: 0;
+
+        a {
+          height: 100%;
+          width: 100%;
+          display: block;
+          font-size: 0;
+          background-image: url(../../assets/images/logo-mini.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+      .menu {
+        //background-color: tomato;
+        height: 100%;
+        display: flex;
+        li {
+          //background-color: cyan;
+          //padding: 0 20px;
+          position: relative;
+          &.current,// 实现定位效果的显示
+          &:hover {
+            a {
+              color: @themeColor;
+            }
+            &::after {//设置下划线效果
+              content: "";
+              display: block;
+              width: ~"calc(100% - 40px)";//less中使用JS动态计算下划线效果中下划线的长度
+              height: 5px;
+              background-color: @themeColor;
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+
+          a {
+            //width: 100%;
+            height: 100%;
+            line-height: 60px;
+            //background-color: red;
+            display: block;
+            padding: 0 20px; //内边距的设置从li改到a是为了实现“连在一起”的效果，且不可与width重复设置
+            font-size: 18px;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .center{
+      flex:2;
+      //background-color: pink;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .search-bar {
+        width: 300px;
+        height: 40px;
+        margin: 0 auto;
+        background-color: #444;
+        border-radius: 20px;
+        border: 1px solid #999;
+
+        box-sizing: border-box;
+        overflow: hidden;
+
+        display: flex;
+
+        .category {
+          //background-color: cyan;
+          flex: 3;
+          border-radius: 20px 0 0 20px;
+
+          select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            padding-left: 10px;
+            outline: none;
+            font-size: 15px;
+            color: #fff;
+            background-color: transparent;
+            option{
+              background-color: #444;
+            }
+          }
+        }
+
+        .keyword {
+          //background-color: darkcyan;
+          flex: 8;
+
+          input {
+            width: 100%;
+            height: 100%;
+            padding: 0 0 0 10px;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 14px;
+            background-color: transparent;
+          }
+        }
+
+        .submit-btn {
+          //background-color: darkred;
+          flex: 2;
+          border-radius: 0 20px 20px 0;
+
+          input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            border-radius: 0 20px 20px 0;
+            background-color: transparent;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+          }
+        }
+      }
+
+    }
+    .right{
+      flex:2;
+      //background-color: darkcyan;
+
+      display: flex;
+      justify-content: flex-end;
+      .intro {
+        width: fit-content;
+        height: 60px;
+        //background-color: cyan;
+
+        position: relative;
+
+        &:hover .operation-pane {
+          display: block;
+        }
+
+        display: flex;
+        align-items: center;
+        .user {
+          width: fit-content;
+          height: 32px;
+          //background-color: red;
+
+          display: flex;
+          align-items: center;
+
+          .nickname {
+            margin-right: 10px;
+            font-size: 16px;
+            color: #fff;
+          }
+
+          .header {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+          }
+        }
+
+        .operation-pane {
+          width: 160px;
+          //height: 300px;
+          background-color: #fff;
+
+          position: absolute;
+          z-index: 999;
+          right: 0;
+          top: 60px;
+          display: none;
+
+          border: 1px solid #eee;
+
+          box-shadow: 0px -1px 12px 3px grey;
+
+          &::after {
+            content: "";
+            border: 10px solid transparent;
+            border-bottom-color: #fff;
+            position: absolute;
+            right: 10px;
+            top: -20px;
+          }
+
+          .operation {
+            padding: 5px;
+
+            li {
+              font-size: 12px;
+              color: #666;
+              line-height: 34px;
+              padding: 0 5px;
+
+              &:first-child {
+                border-bottom: 1px solid #eaeaea;
+              }
+
+              &:last-child {
+                border-top: 1px solid #eaeaea;
+              }
+
+              &:hover {
+                background-color: #f3f4f6;
+                cursor: pointer;
+              }
+
+              a {
+                font-size: 12px;
+                color: #666;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//2. 播放内容组件
+.play-container{
+  min-width: 1205px;
+  height: 600px;
+  //background-color: grey;
+
+  display: flex;
+  &>.left{
+    flex: 1;
+    background-image: url(../../assets/images/courseLearn_bg.jpg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &>.top{
+      width: 100%;
+      height: 50px;
+      //background-color: pink;
+
+      position: relative;
+      .back-course{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 106px;
+        height: 29px;
+        background-image: url(../../assets/images/courseLearn.png);
+        background-position: -16px -375px;
+
+        font-size: 12px;
+        color: #484848;
+        text-align: center;
+        line-height: 25px;
+      }
+      .pre-course{
+        width: 60px;
+        height: 32px;
+        position: absolute;
+        top: 0;
+        left: 110px;
+        background-image: url(../../assets/images/courseLearn.png);
+        background-position: -9px -727px;
+      }
+    }
+    &>.play-pane{
+      //background-color: cyan;
+      width: ~"calc(100% - 100px)";
+      // 因为尺寸由flex值分配，如果内部的内容太高flex值就会失效
+      flex: 1;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      .class-title{
+        //background-color: grey;
+        font-size: 16px;
+        color: #fff;
+        padding: 10px 0;
+      }
+      .player{
+        // 因为尺寸由flex值分配，如果内部的内容太高flex值就会失效
+        flex: 1;
+        overflow: hidden;
+        #like-player{
+          height: 100%;
+        }
+
+      }
+    }
+    &>.bottom{
+      width: 100%;
+      height: 50px;
+      //background-color: pink;
+
+      position: relative;
+      .next-course{
+        width: 60px;
+        height: 32px;
+        position: absolute;
+        bottom: 0;
+        left: 110px;
+        background-image: url(../../assets/images/courseLearn.png);
+        background-position: -70px -723px;
+      }
+    }
+  }
+  &>.right{
+    //background-color: darkcyan;
+    width: 300px;
+
+    .title{
+      height: 45px;
+      line-height: 45px;
+      background-image: url(../../assets/images/toolbar_tab_bg.png);
+      background-repeat: repeat-x;
+      font-size: 18px;
+      color: #666;
+      text-align: center;
+    }
+    .items{
+      height: ~"calc(100% - 45px)";
+      overflow-y: auto;
+      padding: 10px;
+      box-sizing: border-box;
+      .course-dg{
+        //background-color: grey;
+        // 临时高度
+        //height: 200px;
+
+        // 课程播放页面中也存在课程大纲的组件，但是没有“立即观看”的按钮，所以通过样式去控制，以简便开发
+        &.no-view{
+          .c-view{
+            display: none;
+          }
+        }
+
+        position: relative;
+        .dg{
+          &::before{
+            content:"";
+            width: 1px;
+            height: 100%;
+            background-color: #ccc;
+
+            position: absolute;
+            top: 0;
+            left: 68px;
+          }
+          li{
+            line-height: 40px;
+            //background-color: darkcyan;
+            display: flex;
+            align-items: center;
+            cursor: default;
+            // 下面凡是涉及到字体颜色的都是一样的，且当实现hover样式时因为优先级放在下面的元素上会使得hover的样式无法显现，故加在li上，让下面自己去继承
+            color: #999;
+            &:hover{
+              color: @themeColor;
+              // a标签比较特殊，不会继承li中的字体颜色
+              .c-view{
+                color: @themeColor;
+                border-color: @themeColor;
+              }
+            }
+            .c-num{
+              width: 60px;
+              //background-color: cyan;
+              font-size: 12px;
+            }
+            .c-progress{
+              width: 16px;
+              height: 14px;
+              background-color: #fff;
+              z-index: 9;
+              //background-color: green;
+              background-image: url(../../assets/images/listIcons.png);
+              background-position: -136px -113px;
+              &.no-finish{
+                background-image: url(../../assets/images/listIcons.png);
+                background-position: -169px -113px;
+              }
+              &.finished{
+                background-image: url(../../assets/images/listIcons.png);
+                background-position: -200px -113px;
+              }
+            }
+            .c-title{
+              flex: 1;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+
+              font-size: 14px;
+              //color: #999;
+              padding-left: 10px;
+
+            }
+            .c-view{
+              width: 70px;
+              line-height: 30px;
+              border: 1px solid #999;
+              border-radius: 5px;
+
+              font-size: 12px;
+              // a标签比较特殊，不会继承li中的字体颜色
+              color: #999;
+              text-align: center;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//3. 底部组件
+.footer {
+  height: 185px;
+  background-color: #474443;
+  .content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .left {
+      height: 105px;
+      flex: 2;
+      //background-color: darkcyan;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .intro {
+        font-size: 14px;
+        color: #fff;
+      }
+      .friend-link {
+        display: flex;
+        li {
+          a {
+            color: #fff;
+            font-size: 14px;
+            &:hover {
+              color: @themeColor;
+            }
+          }
+          //background-color: cyan;
+          &:not(:first-child) {
+            margin-left: 20px;
+          }
+        }
+      }
+      .ban {
+        font-size: 14px;
+        color: #999;
+      }
+    }
+    .right {
+      text-align: right;
+      height: 105px;
+      flex: 1;
+      //background-color: deeppink;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .ad-image {
+        height: 46px;
+        //background-color: darkcyan;
+        display: flex;
+        justify-content: flex-end;
+        .left-ad,
+        .right-ad {
+          width: 46px;
+          height: 46px;
+          background-image: url(../../assets/images/layout_css_sprites2.png);
+          cursor: pointer;
+
+          &:hover {
+            .ewm-pane {
+              display: block;
+            }
+          }
+
+          position: relative;
+          .ewm-pane {
+            width: 120px;
+            height: 120px;
+            box-shadow: 0 0 10px #ccc;
+            padding: 5px;
+            //宽高设置以后，额外添加padding会扩展整个盒子的尺寸
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -125px;
+            display: none;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+        }
+        .left-ad {
+          background-position: -112px -74px;
+          &:hover {
+            background-position: -154px -174px;
+          }
+        }
+        .right-ad {
+          background-position: -220px -174px;
+          margin-left: 20px;
+          &:hover {
+            background-position: -286px -174px;
+          }
+        }
+      }
+      .second-line {
+        font-size: 14px;
+        color: #fff;
+        .time {
+          padding-left: 10px;
+          font-size: 12px;
+          color: #ddd;
+        }
+      }
+      .tel {
+        font-size: 19px;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//4. 右侧固定客服组件
+.fixed-contact{
+  width: 50px;
+  height: 200px;
+  //background-color: tomato;
+  position: fixed;
+  right: 30px;
+  top: 30%;
+  transform: translateY(-50%);
+  .contact,
+  .app,
+  .back-top{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+  }
+  .contact{
+    margin-bottom: 50px;
+    background-image: url(../../assets/images/layout_css_sprites2.png);
+    background-position: -83px -174px;
+
+    &:hover{
+      background-position: -11px -174px;
+    }
+  }
+  .app{
+    background-image: url(../../assets/images/layout_css_sprites.png);
+    background-position: -4px -94px;
+    &:hover {
+      background-color: #ddd;
+      .ewm-pane {
+        display: block;
+      }
+    }
+
+    position: relative;
+    .ewm-pane {
+      width: 120px;
+      height: 120px;
+      box-shadow: 0 0 10px #ccc;
+      padding: 5px;
+      //宽高设置以后，额外添加padding会扩展整个盒子的尺寸
+      box-sizing: border-box;
+      position: absolute;
+      left: -130px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: none;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .back-top{
+    background-image: url(../../assets/images/layout_css_sprites.png);
+    background-position: -166px 2px;
+  }
+}

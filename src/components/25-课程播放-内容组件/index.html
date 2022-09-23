@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课程播放-内容组件</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="play-container">
+    <div class="left">
+        <div class="top">
+            <a class="back-course" href="">返回课程主页</a>
+            <span class="pre-course">
+
+            </span>
+        </div>
+        <div class="play-pane">
+            <p class="class-title">极系列-H5-第1节课</p>
+            <div class="player">
+                <div id="like-player">
+
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <span class="next-course">
+
+            </span>
+        </div>
+    </div>
+    <div class="right">
+        <div class="title">
+            课程目录
+        </div>
+        <div class="items">
+            <div class="course-dg no-view">
+                <ul class="dg">
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress finished"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="#" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress no-finish"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="#" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="#" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress no-finish"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述</span>
+                        <a href="#" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="#" class="c-view">立即观看</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="DPlayer.min.js"></script>
+<script>
+    const dp = new DPlayer({
+        container: document.getElementById('like-player'),
+        screenshot: true,
+        video: {
+            url: '../../assets/videos/test.mp4'
+        }
+    });
+
+</script>
+</body>
+</html>

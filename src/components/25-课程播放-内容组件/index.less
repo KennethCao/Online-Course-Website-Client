@@ -1,0 +1,199 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+.play-container{
+  min-width: 1205px;
+  min-height: 600px;
+  //background-color: grey;
+
+  display: flex;
+  &>.left{
+    flex: 1;
+    background-image: url(../../assets/images/courseLearn_bg.jpg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &>.top{
+      width: 100%;
+      height: 50px;
+      //background-color: pink;
+
+      position: relative;
+      .back-course{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 106px;
+        height: 29px;
+        background-image: url(../../assets/images/courseLearn.png);
+        background-position: -16px -375px;
+
+        font-size: 12px;
+        color: #484848;
+        text-align: center;
+        line-height: 25px;
+      }
+      .pre-course{
+        width: 60px;
+        height: 32px;
+        position: absolute;
+        top: 0;
+        left: 110px;
+        background-image: url(../../assets/images/courseLearn.png);
+        background-position: -9px -727px;
+      }
+    }
+    &>.play-pane{
+      //background-color: cyan;
+      width: ~"calc(100% - 100px)";
+      // 因为尺寸由flex值分配，如果内部的内容太高flex值就会失效
+      flex: 1;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      .class-title{
+        //background-color: grey;
+        font-size: 16px;
+        color: #fff;
+        padding: 10px 0;
+      }
+      .player{
+        // 因为尺寸由flex值分配，如果内部的内容太高flex值就会失效
+        flex: 1;
+        overflow: hidden;
+        #like-player{
+          height: 100%;
+        }
+
+      }
+    }
+    &>.bottom{
+      width: 100%;
+      height: 50px;
+      //background-color: pink;
+
+      position: relative;
+      .next-course{
+        width: 60px;
+        height: 32px;
+        position: absolute;
+        bottom: 0;
+        left: 110px;
+        background-image: url(../../assets/images/courseLearn.png);
+        background-position: -70px -723px;
+      }
+    }
+  }
+  &>.right{
+    //background-color: darkcyan;
+    width: 300px;
+
+    .title{
+      height: 45px;
+      line-height: 45px;
+      background-image: url(../../assets/images/toolbar_tab_bg.png);
+      background-repeat: repeat-x;
+      font-size: 18px;
+      color: #666;
+      text-align: center;
+    }
+    .items{
+      height: ~"calc(100% - 45px)";
+      overflow-y: auto;
+      padding: 10px;
+      box-sizing: border-box;
+      .course-dg{
+        //background-color: grey;
+        // 临时高度
+        //height: 200px;
+
+        // 课程播放页面中也存在课程大纲的组件，但是没有“立即观看”的按钮，所以通过样式去控制，以简便开发
+        &.no-view{
+          .c-view{
+            display: none;
+          }
+        }
+
+        position: relative;
+        .dg{
+          &::before{
+            content:"";
+            width: 1px;
+            height: 100%;
+            background-color: #ccc;
+
+            position: absolute;
+            top: 0;
+            left: 68px;
+          }
+          li{
+            line-height: 40px;
+            //background-color: darkcyan;
+            display: flex;
+            align-items: center;
+            cursor: default;
+            // 下面凡是涉及到字体颜色的都是一样的，且当实现hover样式时因为优先级放在下面的元素上会使得hover的样式无法显现，故加在li上，让下面自己去继承
+            color: #999;
+            &:hover{
+              color: @themeColor;
+              // a标签比较特殊，不会继承li中的字体颜色
+              .c-view{
+                color: @themeColor;
+                border-color: @themeColor;
+              }
+            }
+            .c-num{
+              width: 60px;
+              //background-color: cyan;
+              font-size: 12px;
+            }
+            .c-progress{
+              width: 16px;
+              height: 14px;
+              background-color: #fff;
+              z-index: 9;
+              //background-color: green;
+              background-image: url(../../assets/images/listIcons.png);
+              background-position: -136px -113px;
+              &.no-finish{
+                background-image: url(../../assets/images/listIcons.png);
+                background-position: -169px -113px;
+              }
+              &.finished{
+                background-image: url(../../assets/images/listIcons.png);
+                background-position: -200px -113px;
+              }
+            }
+            .c-title{
+              flex: 1;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+
+              font-size: 14px;
+              //color: #999;
+              padding-left: 10px;
+
+            }
+            .c-view{
+              width: 70px;
+              line-height: 30px;
+              border: 1px solid #999;
+              border-radius: 5px;
+
+              font-size: 12px;
+              // a标签比较特殊，不会继承li中的字体颜色
+              color: #999;
+              text-align: center;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
