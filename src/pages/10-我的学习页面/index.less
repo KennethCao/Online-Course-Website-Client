@@ -1,0 +1,857 @@
+@import "../../css/base.css";
+@import "../../config/colorConfig";
+
+body{
+  background-color: rgb(245,245,245);
+}
+
+// mini导航栏
+.navbar-mini{
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+
+  height: 60px;
+  min-width: 1205px;
+  background-image: url(../../assets/images/bg_nav_rep.png);
+  background-repeat: repeat-x;
+  .content{
+    height: 100%;
+
+    display: flex;
+    .left{
+      flex:3;
+      //background-color: tomato;
+
+      display: flex;
+      .logo {
+        width: 177px;
+        height: 60px;
+        margin: 0;
+
+        a {
+          height: 100%;
+          width: 100%;
+          display: block;
+          font-size: 0;
+          background-image: url(../../assets/images/logo-mini.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+      .menu {
+        //background-color: tomato;
+        height: 100%;
+        display: flex;
+        li {
+          //background-color: cyan;
+          //padding: 0 20px;
+          position: relative;
+          &.current,// 实现定位效果的显示
+          &:hover {
+            a {
+              color: @themeColor;
+            }
+            &::after {//设置下划线效果
+              content: "";
+              display: block;
+              width: ~"calc(100% - 40px)";//less中使用JS动态计算下划线效果中下划线的长度
+              height: 5px;
+              background-color: @themeColor;
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+
+          a {
+            //width: 100%;
+            height: 100%;
+            line-height: 60px;
+            //background-color: red;
+            display: block;
+            padding: 0 20px; //内边距的设置从li改到a是为了实现“连在一起”的效果，且不可与width重复设置
+            font-size: 18px;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .center{
+      flex:2;
+      //background-color: pink;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .search-bar {
+        width: 300px;
+        height: 40px;
+        margin: 0 auto;
+        background-color: #444;
+        border-radius: 20px;
+        border: 1px solid #999;
+
+        box-sizing: border-box;
+        overflow: hidden;
+
+        display: flex;
+
+        .category {
+          //background-color: cyan;
+          flex: 3;
+          border-radius: 20px 0 0 20px;
+
+          select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            padding-left: 10px;
+            outline: none;
+            font-size: 15px;
+            color: #fff;
+            background-color: transparent;
+            option{
+              background-color: #444;
+            }
+          }
+        }
+
+        .keyword {
+          //background-color: darkcyan;
+          flex: 8;
+
+          input {
+            width: 100%;
+            height: 100%;
+            padding: 0 0 0 10px;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 14px;
+            background-color: transparent;
+          }
+        }
+
+        .submit-btn {
+          //background-color: darkred;
+          flex: 2;
+          border-radius: 0 20px 20px 0;
+
+          input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            border-radius: 0 20px 20px 0;
+            background-color: transparent;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+          }
+        }
+      }
+
+    }
+    .right{
+      flex:2;
+      //background-color: darkcyan;
+
+      display: flex;
+      justify-content: flex-end;
+      .intro {
+        width: fit-content;
+        height: 60px;
+        //background-color: cyan;
+
+        position: relative;
+
+        &:hover .operation-pane {
+          display: block;
+        }
+
+        display: flex;
+        align-items: center;
+        .user {
+          width: fit-content;
+          height: 32px;
+          //background-color: red;
+
+          display: flex;
+          align-items: center;
+
+          .nickname {
+            margin-right: 10px;
+            font-size: 16px;
+            color: #fff;
+          }
+
+          .header {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+          }
+        }
+
+        .operation-pane {
+          width: 160px;
+          //height: 300px;
+          background-color: #fff;
+
+          position: absolute;
+          z-index: 999;
+          right: 0;
+          top: 60px;
+          display: none;
+
+          border: 1px solid #eee;
+
+          box-shadow: 0px -1px 12px 3px grey;
+
+          &::after {
+            content: "";
+            border: 10px solid transparent;
+            border-bottom-color: #fff;
+            position: absolute;
+            right: 10px;
+            top: -20px;
+          }
+
+          .operation {
+            padding: 5px;
+
+            li {
+              font-size: 12px;
+              color: #666;
+              line-height: 34px;
+              padding: 0 5px;
+
+              &:first-child {
+                border-bottom: 1px solid #eaeaea;
+              }
+
+              &:last-child {
+                border-top: 1px solid #eaeaea;
+              }
+
+              &:hover {
+                background-color: #f3f4f6;
+                cursor: pointer;
+              }
+
+              a {
+                font-size: 12px;
+                color: #666;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 个人信息展示
+.user-info-pane{
+  height: 190px;
+  background-image: url(../../assets/images/my_study_back.png);
+  background-position: top center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  .user-header{
+    width: 90px;
+    height: 90px;
+    border: 4px solid hsla(0,0%,98%,.6);
+    box-sizing: border-box;
+    border-radius: 50%;
+  }
+  .user-nickname{
+    font-size: 20px;
+    color: #fff;
+  }
+  .zym{
+    font-size: 14px;
+    color: #fff;
+  }
+}
+
+// 章节提示
+.section-notice{
+  height: 60px;
+  background-color: #fff;
+  .content{
+    height: 100%;
+    .menu {
+      //background-color: tomato;
+      height: 100%;
+      display: flex;
+      li {
+        //background-color: cyan;
+        //padding: 0 20px;
+        position: relative;
+        &.current,// 实现定位效果的显示
+        &:hover {
+          a {
+            color: @themeColor;
+          }
+          &::after {//设置下划线效果
+            content: "";
+            display: block;
+            width: ~"calc(100% - 40px)";//less中使用JS动态计算下划线效果中下划线的长度
+            height: 5px;
+            background-color: @themeColor;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        a {
+          //width: 100%;
+          height: 100%;
+          line-height: 60px;
+          //background-color: red;
+          display: block;
+          padding: 0 20px; //内边距的设置从li改到a是为了实现“连在一起”的效果，且不可与width重复设置
+          font-size: 18px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// 课程列表
+.course-list{
+  min-height: 500px;
+  padding-top: 30px;
+
+  display: flex;
+  flex-wrap: wrap;
+  //justify-content: space-between;
+
+  // 课程卡片
+  .course-card {
+    min-width: 200px;
+    max-width: 300px;
+    height: 252px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    transition: all 1s linear 0s;
+    &:hover {
+      box-shadow: 1px 8px 10px 4px grey;
+      transform: translateY(-20px);
+    }
+    &>.image {
+      width: 100%;
+      height: 130px;
+      background-color: darkcyan;
+
+      position: relative;
+      &>a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: palegreen;
+        overflow: hidden;
+        &>img {
+          width: 100%;
+          height: 100%;
+
+          transition: all 2s ease-in-out 0s;
+          &:hover {
+            transform: scale(1.5, 1.5);
+          }
+        }
+      }
+      &>.tag {
+        width: 48px;
+        height: 23px;
+        /*background-color: cyan;*/
+        background-image: url(../../assets/images/star_back.png);
+        background-position: -16px -57px;
+
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        line-height: 23px;
+        position: absolute;
+        top: 5px;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    &>.title {
+      flex: 2;
+      padding-left: 10px;
+      /*padding-top: 10px;*/
+      /*box-sizing: border-box;*/
+      /*background-color: pink;*/
+      &>a {
+        display: block;
+        font-size: 14px;
+        color: #333;
+        text-decoration: none;
+        margin-top: 10px;
+        &:hover {
+          color: tomato;
+        }
+      }
+    }
+    &>.score {
+      flex: 1;
+      /*background-color: green;*/
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      &>.star {
+        width: 57px;
+        height: 10px;
+        background-image: url(../../assets/images/star_back.png);
+        background-position: -91px -58px;
+        &>.y_star {
+          height: 100%;
+          background-image: url(../../assets/images/star_back.png);
+          background-position: -10px -158px;
+        }
+      }
+      &>.score_text {
+        font-size: 12px;
+        color: #777986;
+        margin-left: 10px;
+      }
+    }
+    &>.zan {
+      flex: 1;
+      padding-left: 10px;
+      &>.good {
+        font-size: 16px;
+        color: #777986;
+        &::before {
+          margin-right: 5px;
+          color: tomato;
+        }
+      }
+    }
+  }
+  // 讲师卡片
+  .teacher-card{
+    background-color: #fff;
+    min-width: 300px;// 为了防止元素被挤压
+    height: 150px;
+    //background-color: tomato;
+    margin-top: 50px;
+    box-shadow: 2px -1px 10px 0 rgba(0,0,0,0.15);
+
+    // 头像和简介分为左右的两部分，使用flex布局最为便捷
+    // 但是需要注意的是，当组件被引入时，组件因界面被拉伸，简介不部分可以拉伸但是头像部分不可以
+    display: flex;
+    .left{
+      //background-color: darkcyan;
+      width: 200px;
+
+      position: relative;
+      .t-header{
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+        box-shadow: 2px -1px 10px 0 rgba(0,0,0,0.15);
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translate(-50%);
+        &:hover{
+          animation: like-rotate 10s linear 0s infinite;
+        }
+      }
+      .t-name{
+        width: 150px;
+        line-height: 34px;
+        background-color: @themeColor;
+        border-radius: 17px;
+        color: #fff;
+        font-size: 18px;
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 20px;
+
+      }
+    }
+    .right {
+      //background-color: deeppink;
+      flex: 1;
+      padding: 5px;//或者在t-position中添加margin，此处padding的方案更好，因为简介的文字贴边不好看
+
+      .t-position{
+        font-size: 20px;
+        text-align: center;
+        line-height: 40px;
+        color: @themeColor;
+        font-weight: 700;
+        border-bottom: 2px solid @themeColor;
+      }
+      .t-intro{
+        padding-top: 10px;
+        font-size: 16px;
+        color: #666;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  // 新闻卡片
+  .news-card{
+    width: 500px;
+    //height: 100px;
+    background-color: #fff;
+    margin-top: 30px;
+
+    box-shadow: 2px -1px 10px 0 rgba(0,0,0,0.15);
+    ul{
+      padding: 5px 10px;
+      li{
+        line-height: 36px;
+        display: flex;
+        justify-content: space-between;
+        a{
+          color: #333;
+          font-size: 15px;
+          &:hover{
+            color: @themeColor;
+          }
+
+          // 超出部分不换行、并使用省略号代替
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+        span{
+          // 当新闻简介部分挤压时间部分时，会导致时间部分换行，此时设置最小宽度
+          min-width: 190px;
+          color: #999;
+          font-size: 15px;
+
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  // 课程进度
+  .course-progress-card {
+    min-width: 200px;
+    max-width: 300px;
+    height: 252px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    transition: all 1s linear 0s;
+    &:hover {
+      box-shadow: 1px 8px 10px 4px grey;
+      transform: translateY(-20px);
+    }
+    &>.image {
+      width: 100%;
+      height: 130px;
+      background-color: darkcyan;
+
+      position: relative;
+      &>a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: palegreen;
+        overflow: hidden;
+        &>img {
+          width: 100%;
+          height: 100%;
+
+          transition: all 2s ease-in-out 0s;
+          &:hover {
+            transform: scale(1.5, 1.5);
+          }
+        }
+      }
+      &>.tag {
+        width: 48px;
+        height: 23px;
+        /*background-color: cyan;*/
+        background-image: url(../../assets/images/star_back.png);
+        background-position: -16px -57px;
+
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        line-height: 23px;
+        position: absolute;
+        top: 5px;
+        left: 0;
+        z-index: 999;
+      }
+    }
+    &>.title {
+      flex: 2;
+      padding-left: 10px;
+      /*padding-top: 10px;*/
+      /*box-sizing: border-box;*/
+      /*background-color: pink;*/
+      &>a {
+        display: block;
+        font-size: 14px;
+        color: #333;
+        text-decoration: none;
+        margin-top: 10px;
+        &:hover {
+          color: tomato;
+        }
+      }
+    }
+    &>.progress-pane {
+      flex: 1;
+      /*background-color: green;*/
+
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      .progress-bar{
+        width: 100%;
+        height: 10px;
+        background-color: #e8e8e8;
+        .value{
+          height: 100%;
+          background-color: @themeColor;
+        }
+      }
+    }
+    &>.progress-text {
+      flex: 1;
+      padding-left: 10px;
+      font-size: 14px;
+      color: @themeColor;
+    }
+  }
+
+  // 额外定义一些特定的类名, 给使用组件容器的开发人员来使用
+  // 类名 -> 各个卡片组件上面
+  // 自动的给他分配空间, 以及调整间距
+  .column5 {
+    width: ~"calc((100% - 4 * 30px) / 5)";
+    margin-bottom: 30px;
+
+    &:not(:nth-child(5n+1)) {
+      margin-left: 30px;
+    }
+  }
+
+  .column3 {
+    width: ~"calc((100% - 2 * 30px) / 3)";
+    margin-bottom: 30px;
+
+    &:not(:nth-child(3n+1)) {
+      margin-left: 30px;
+    }
+  }
+
+  .column2 {
+    width: ~"calc((100% - 1 * 30px) / 2)";
+    margin-bottom: 30px;
+
+    &:not(:nth-child(2n+1)) {
+      margin-left: 30px;
+    }
+  }
+}
+
+// 固定条目
+.fixed-contact{
+  width: 50px;
+  height: 200px;
+  //background-color: tomato;
+  position: fixed;
+  right: 30px;
+  top: 30%;
+  transform: translateY(-50%);
+  .contact,
+  .app,
+  .back-top{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+  }
+  .contact{
+    margin-bottom: 50px;
+    background-image: url(../../assets/images/layout_css_sprites2.png);
+    background-position: -83px -174px;
+
+    &:hover{
+      background-position: -11px -174px;
+    }
+  }
+  .app{
+    background-image: url(../../assets/images/layout_css_sprites.png);
+    background-position: -4px -94px;
+    &:hover {
+      background-color: #ddd;
+      .ewm-pane {
+        display: block;
+      }
+    }
+
+    position: relative;
+    .ewm-pane {
+      width: 120px;
+      height: 120px;
+      box-shadow: 0 0 10px #ccc;
+      padding: 5px;
+      //宽高设置以后，额外添加padding会扩展整个盒子的尺寸
+      box-sizing: border-box;
+      position: absolute;
+      left: -130px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: none;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .back-top{
+    background-image: url(../../assets/images/layout_css_sprites.png);
+    background-position: -166px 2px;
+  }
+}
+
+// 底部
+.footer {
+  margin-top: 30px;
+  height: 185px;
+  background-color: #474443;
+  .content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .left {
+      height: 105px;
+      flex: 2;
+      //background-color: darkcyan;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .intro {
+        font-size: 14px;
+        color: #fff;
+      }
+      .friend-link {
+        display: flex;
+        li {
+          a {
+            color: #fff;
+            font-size: 14px;
+            &:hover {
+              color: @themeColor;
+            }
+          }
+          //background-color: cyan;
+          &:not(:first-child) {
+            margin-left: 20px;
+          }
+        }
+      }
+      .ban {
+        font-size: 14px;
+        color: #999;
+      }
+    }
+    .right {
+      text-align: right;
+      height: 105px;
+      flex: 1;
+      //background-color: deeppink;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .ad-image {
+        height: 46px;
+        //background-color: darkcyan;
+        display: flex;
+        justify-content: flex-end;
+        .left-ad,
+        .right-ad {
+          width: 46px;
+          height: 46px;
+          background-image: url(../../assets/images/layout_css_sprites2.png);
+          cursor: pointer;
+
+          &:hover {
+            .ewm-pane {
+              display: block;
+            }
+          }
+
+          position: relative;
+          .ewm-pane {
+            width: 120px;
+            height: 120px;
+            box-shadow: 0 0 10px #ccc;
+            padding: 5px;
+            //宽高设置以后，额外添加padding会扩展整个盒子的尺寸
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -125px;
+            display: none;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+        }
+        .left-ad {
+          background-position: -112px -74px;
+          &:hover {
+            background-position: -154px -174px;
+          }
+        }
+        .right-ad {
+          background-position: -220px -174px;
+          margin-left: 20px;
+          &:hover {
+            background-position: -286px -174px;
+          }
+        }
+      }
+      .second-line {
+        font-size: 14px;
+        color: #fff;
+        .time {
+          padding-left: 10px;
+          font-size: 12px;
+          color: #ddd;
+        }
+      }
+      .tel {
+        font-size: 19px;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+}
