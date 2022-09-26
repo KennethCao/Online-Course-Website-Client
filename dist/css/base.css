@@ -1,0 +1,20 @@
+@import "normalize.css";
+@import "//at.alicdn.com/t/c/font_3627056_drchtii9pe.css";
+.bx {
+    margin: 0 auto;
+    width: 1205px;
+}
+
+ul, p, dl, dd{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h5, h3{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}

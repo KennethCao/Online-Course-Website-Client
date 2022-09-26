@@ -1,0 +1,63 @@
+@import "../../css/base.css";
+.teacher-item {
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.teacher-item .intro {
+  height: 80px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+.teacher-item .intro .message {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.teacher-item .intro .message .t-header {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #51b257;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+.teacher-item .intro .message .t-profile {
+  height: 60px;
+  flex: 1;
+  padding: 10px 0 0 20px;
+}
+.teacher-item .intro .message .t-profile .position-name {
+  font-size: 18px;
+  color: #424242;
+}
+.teacher-item .intro .message .t-profile .position-name.is-star::after {
+  content: "星级讲师";
+  font-size: 12px;
+  color: #a5571b;
+  background-color: #ffd2af;
+  padding: 0 5px;
+  border-radius: 3px;
+}
+.teacher-item .intro .message .t-profile .class-count {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #999;
+}
+.teacher-item .intro .to-detail {
+  width: 98px;
+  height: 34px;
+  color: #51b257;
+  border: 1px solid #51b257;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+  line-height: 34px;
+}
+.teacher-item .desc {
+  min-height: 80px;
+  line-height: 35px;
+  letter-spacing: 2px;
+}
+/*# sourceMappingURL=index.css.map */

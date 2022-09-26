@@ -1,0 +1,33 @@
+@import "../../css/base.css";
+.bread-nav {
+  min-width: 1205px;
+  height: 50px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.04);
+}
+.bread-nav .content {
+  height: 100%;
+}
+.bread-nav .content ul {
+  height: 100%;
+  display: flex;
+}
+.bread-nav .content ul li {
+  display: flex;
+  align-items: center;
+}
+.bread-nav .content ul li a {
+  display: block;
+  height: 100%;
+  text-align: center;
+  line-height: 50px;
+  padding: 0 15px;
+  font-size: 16px;
+  color: #666;
+}
+.bread-nav .content ul li a:hover {
+  color: #51b257;
+}
+.bread-nav .content ul li:not(:first-child):before {
+  content: ">";
+}
+/*# sourceMappingURL=index.css.map */

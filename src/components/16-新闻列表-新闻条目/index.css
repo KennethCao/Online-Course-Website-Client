@@ -1,0 +1,37 @@
+@import "../../css/base.css";
+.article-item {
+  padding: 5px;
+  border-bottom: 1px solid #999;
+  background-color: #fff;
+}
+.article-item .top {
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.article-item .top .title {
+  font-size: 16px;
+  color: #424242;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.article-item .top .title:hover {
+  color: #51b257;
+}
+.article-item .top .time {
+  min-width: 190px;
+  text-align: right;
+  font-size: 14px;
+  color: #999;
+}
+.article-item .bottom {
+  min-height: 50px;
+  font-size: 14px;
+  color: #999;
+  letter-spacing: 2px;
+  line-height: 20px;
+  text-indent: 2em;
+}
+/*# sourceMappingURL=index.css.map */

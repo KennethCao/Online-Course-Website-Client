@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课程播放页</title>
+    <link rel="stylesheet" href="css/course-play.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keyword" content="全栈,大数据,人工智能,前端,后端,React,Vue,Node">
+    <meta name="description" content="撩课, 是一家致力于打造高质量课程的平台!圆您coding梦!">
+</head>
+<body>
+
+
+<!--1. mini导航航-->
+<div class="navbar-mini">
+    <div class="content bx">
+        <div class="left">
+            <h1 class="logo">
+                <a href="index.html">
+                    撩学堂
+                </a>
+            </h1>
+            <ul class="menus">
+                <li class="current"><a href="teacher-list.html">讲师</a></li>
+                <li><a href="course-list.html">课程</a></li>
+                <li><a href="article-list.html">文章</a></li>
+            </ul>
+        </div>
+        <div class="center">
+            <form action="">
+                <div class="search-bar">
+                    <div class="category">
+                        <label>
+                            <select name="category">
+                                <option value="all">全部</option>
+                                <option value="course">课程</option>
+                                <option value="teacher">讲师</option>
+                                <option value="article">文章</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="keyword">
+                        <label>
+                            <input type="text" placeholder="请输入搜索关键字" name="kw">
+                        </label>
+                    </div>
+                    <div class="submit-btn">
+                        <input class="iconfont" type="submit" value="&#xe610;">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <div class="intro">
+                <div class="user">
+                    <span class="nick-name">用户昵称: sz</span>
+                    <img class="header" src="assets/images/header.png" alt="">
+                </div>
+                <div class="operation-pane">
+                    <ul class="operation">
+                        <li><a href="index.html">撩课学院 - itlike.com</a></li>
+                        <li><a href="my-study.html">我的学习</a></li>
+                        <li><a href="my-setting.html">设置</a></li>
+                        <li class="exit">退出</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--2. 播放内容组件-->
+<div class="play-container">
+    <div class="left">
+        <div class="top">
+            <a href="course-detail.html" class="back-course">返回课程主页</a>
+            <span class="pre-course"></span>
+        </div>
+        <div class="play-pane">
+            <p class="class-title">极系列-H5-第一节课</p>
+            <div class="player">
+                <div id="like-player">
+
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <span class="next-course"></span>
+        </div>
+    </div>
+    <div class="right">
+        <div class="title">
+            课程目录
+        </div>
+        <div class="items">
+            <div class="course-dg no-view">
+                <ul class="dg">
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress finished"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress no-finish"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress finished"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress no-finish"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress finished"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress no-finish"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress finished"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress no-finish"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress finished"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress no-finish"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li><li>
+                    <span class="c-num">课时1: </span>
+                    <span class="c-progress"></span>
+                    <span class="c-title">Python爬虫-必备基础-概述</span>
+                    <a href="course-play.html" class="c-view">立即观看</a>
+                </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress finished"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress no-finish"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress finished"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress no-finish"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+                    <li>
+                        <span class="c-num">课时1: </span>
+                        <span class="c-progress"></span>
+                        <span class="c-title">Python爬虫-必备基础-概述</span>
+                        <a href="course-play.html" class="c-view">立即观看</a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--3. 底部组件-->
+<div class="footer">
+    <div class="content bx">
+        <div class="left">
+            <p class="intro">撩课云课堂 是掘智公司（itlike.com）旗下专注职业技能提升的在线学习平台。</p>
+            <ul class="friend-link">
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">帮助中心</a></li>
+                <li><a href="#">撩课论坛</a></li>
+            </ul>
+            <p class="ban">©2018-2020 课程内容版权均归 撩课教育 所有 沪ICP备18036896号</p>
+        </div>
+        <div class="right">
+            <div class="ad-image">
+                <div class="left-ad">
+                    <div class="ewm-pane">
+                        <img src="assets/images/ewm_lk.jpg" alt="">
+                    </div>
+                </div>
+                <div class="right-ad">
+                    <div class="ewm-pane">
+                        <img src="assets/images/ewm_lk.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="second-line">
+                客服热线 <span class="time">09:00-19:00</span>
+            </p>
+            <p class="tel">0554-66666666</p>
+        </div>
+    </div>
+</div>
+
+<!--4. 右侧固定客服组件-->
+<div class="fixed-contact">
+    <div class="contact">
+
+    </div>
+    <div class="app">
+
+        <div class="ewm-pane">
+            <img src="assets/images/ewm_lk.jpg" alt="">
+        </div>
+    </div>
+    <div class="back-top">
+
+    </div>
+</div>
+
+
+<script src="lib/DPlayer.min.js"></script>
+<script src="js/course-play.js"></script>
+
+
+</body>
+</html>

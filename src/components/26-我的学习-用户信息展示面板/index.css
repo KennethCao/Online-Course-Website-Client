@@ -1,0 +1,26 @@
+@import "../../css/base.css";
+.user-info-pane {
+  height: 190px;
+  background-image: url(../../assets/images/my_study_back.png);
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.user-info-pane .user-header {
+  width: 90px;
+  height: 90px;
+  border: 4px solid hsla(0, 0%, 98%, 0.6);
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.user-info-pane .user-nickname {
+  font-size: 20px;
+  color: #fff;
+}
+.user-info-pane .zym {
+  font-size: 14px;
+  color: #fff;
+}
+/*# sourceMappingURL=index.css.map */

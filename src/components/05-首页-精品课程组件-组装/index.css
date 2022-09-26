@@ -1,0 +1,151 @@
+@import "../../css/base.css";
+.section > .title-bar {
+  line-height: 80px;
+  position: relative;
+}
+.section > .title-bar .title {
+  text-align: center;
+  font-size: 28px;
+  color: #780000;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.section > .title-bar .more {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #400000;
+}
+.section > .title-bar .more:hover {
+  color: #51b257;
+}
+.section > .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.section > .container .course-card {
+  min-width: 200px;
+  max-width: 300px;
+  height: 252px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 1s linear 0s;
+}
+.section > .container .course-card:hover {
+  box-shadow: 1px 8px 10px 4px grey;
+  transform: translateY(-20px);
+}
+.section > .container .course-card > .image {
+  width: 100%;
+  height: 130px;
+  background-color: darkcyan;
+  position: relative;
+}
+.section > .container .course-card > .image > a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: palegreen;
+  overflow: hidden;
+}
+.section > .container .course-card > .image > a > img {
+  width: 100%;
+  height: 100%;
+  transition: all 2s ease-in-out 0s;
+}
+.section > .container .course-card > .image > a > img:hover {
+  transform: scale(1.5, 1.5);
+}
+.section > .container .course-card > .image > .tag {
+  width: 48px;
+  height: 23px;
+  /*background-color: cyan;*/
+  background-image: url(../../assets/images/star_back.png);
+  background-position: -16px -57px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 23px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  z-index: 999;
+}
+.section > .container .course-card > .title {
+  flex: 2;
+  padding-left: 10px;
+  /*padding-top: 10px;*/
+  /*box-sizing: border-box;*/
+  /*background-color: pink;*/
+}
+.section > .container .course-card > .title > a {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.section > .container .course-card > .title > a:hover {
+  color: tomato;
+}
+.section > .container .course-card > .score {
+  flex: 1;
+  /*background-color: green;*/
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.section > .container .course-card > .score > .star {
+  width: 57px;
+  height: 10px;
+  background-image: url(../../assets/images/star_back.png);
+  background-position: -91px -58px;
+}
+.section > .container .course-card > .score > .star > .y_star {
+  height: 100%;
+  background-image: url(../../assets/images/star_back.png);
+  background-position: -10px -158px;
+}
+.section > .container .course-card > .score > .score_text {
+  font-size: 12px;
+  color: #777986;
+  margin-left: 10px;
+}
+.section > .container .course-card > .zan {
+  flex: 1;
+  padding-left: 10px;
+}
+.section > .container .course-card > .zan > .good {
+  font-size: 16px;
+  color: #777986;
+}
+.section > .container .course-card > .zan > .good::before {
+  margin-right: 5px;
+  color: tomato;
+}
+.section > .container .column5 {
+  width: calc((100% - 4 * 30px) / 5);
+  margin-bottom: 30px;
+}
+.section > .container .column5:not(:nth-child(5n+1)) {
+  margin-left: 30px;
+}
+.section > .container .column3 {
+  width: calc((100% - 2 * 30px) / 3);
+  margin-bottom: 30px;
+}
+.section > .container .column3:not(:nth-child(3n+1)) {
+  margin-left: 30px;
+}
+.section > .container .column2 {
+  width: calc((100% - 1 * 30px) / 2);
+  margin-bottom: 30px;
+}
+.section > .container .column2:not(:nth-child(2n+1)) {
+  margin-left: 30px;
+}
+/*# sourceMappingURL=index.css.map */

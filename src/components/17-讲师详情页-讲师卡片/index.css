@@ -1,0 +1,43 @@
+@import "../../css/base.css";
+.teacher-intro {
+  min-width: 1205px;
+  height: 190px;
+  background-image: url(../../assets/images/teacher_back.png);
+  background-position: top center;
+}
+.teacher-intro .content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.teacher-intro .content .t-header {
+  width: 90px;
+  height: 90px;
+  border: 4px solid hsla(0, 0%, 98%, 0.6);
+  box-shadow: 0 1px 3px #999;
+  margin-right: 20px;
+}
+.teacher-intro .content .intro-pane {
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.teacher-intro .content .intro-pane .t-position-name {
+  font-size: 20px;
+  color: #fff;
+}
+.teacher-intro .content .intro-pane .t-position-name.is-star::after {
+  content: "";
+  width: 18px;
+  height: 14px;
+  display: inline-block;
+  background-image: url(../../assets/images/star.png);
+  background-position: 0 0;
+  margin-left: 10px;
+}
+.teacher-intro .content .intro-pane .desc {
+  font-size: 14px;
+  color: #fff;
+}
+/*# sourceMappingURL=index.css.map */

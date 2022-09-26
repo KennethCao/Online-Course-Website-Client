@@ -1,0 +1,55 @@
+@import "../../css/base.css";
+.detail-container {
+  background-color: grey;
+}
+.detail-container .top {
+  background-color: #fff;
+  height: 36px;
+}
+.detail-container .top .tabs {
+  height: 100%;
+  display: flex;
+}
+.detail-container .top .tabs li {
+  padding: 0 15px;
+  line-height: 36px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+.detail-container .top .tabs li:hover {
+  color: #51b257;
+}
+.detail-container .top .tabs li.current {
+  color: #fff;
+  background-color: #ccc;
+}
+.detail-container .top .tabs li.current:hover {
+  background-color: #51b257;
+}
+.detail-container .bottom {
+  display: flex;
+  min-height: 400px;
+  margin-top: 20px;
+}
+.detail-container .bottom .left {
+  flex: 1;
+  background-color: orange;
+  margin-right: 20px;
+}
+.detail-container .bottom .left .panes {
+  width: 100%;
+}
+.detail-container .bottom .left .panes li {
+  width: 100%;
+  background-color: lightcyan;
+  display: none;
+}
+.detail-container .bottom .left .panes li.current {
+  display: block;
+}
+.detail-container .bottom .right {
+  width: 290px;
+  background-color: pink;
+}
+/*# sourceMappingURL=index.css.map */

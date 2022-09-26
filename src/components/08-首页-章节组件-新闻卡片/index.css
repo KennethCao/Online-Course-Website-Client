@@ -1,0 +1,31 @@
+@import "../../css/base.css";
+.news-card {
+  width: 500px;
+  background-color: #fff;
+  box-shadow: 2px -1px 10px 0 rgba(0, 0, 0, 0.15);
+}
+.news-card ul {
+  padding: 5px 10px;
+}
+.news-card ul li {
+  line-height: 36px;
+  display: flex;
+  justify-content: space-between;
+}
+.news-card ul li a {
+  color: #333;
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.news-card ul li a:hover {
+  color: #51b257;
+}
+.news-card ul li span {
+  min-width: 190px;
+  color: #999;
+  font-size: 15px;
+  margin-left: 15px;
+}
+/*# sourceMappingURL=index.css.map */

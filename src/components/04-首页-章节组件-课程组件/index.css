@@ -1,0 +1,105 @@
+@import "../../css/base.css";
+.course-card {
+  min-width: 200px;
+  max-width: 300px;
+  height: 252px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 1s linear 0s;
+}
+.course-card:hover {
+  box-shadow: 1px 8px 10px 4px grey;
+  transform: translateY(-20px);
+}
+.course-card > .image {
+  width: 100%;
+  height: 130px;
+  background-color: darkcyan;
+  position: relative;
+}
+.course-card > .image > a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: palegreen;
+  overflow: hidden;
+}
+.course-card > .image > a > img {
+  width: 100%;
+  height: 100%;
+  transition: all 2s ease-in-out 0s;
+}
+.course-card > .image > a > img:hover {
+  transform: scale(1.5, 1.5);
+}
+.course-card > .image > .tag {
+  width: 48px;
+  height: 23px;
+  /*background-color: cyan;*/
+  background-image: url(../../assets/images/star_back.png);
+  background-position: -16px -57px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 23px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  z-index: 999;
+}
+.course-card > .title {
+  flex: 2;
+  padding-left: 10px;
+  /*padding-top: 10px;*/
+  /*box-sizing: border-box;*/
+  /*background-color: pink;*/
+}
+.course-card > .title > a {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.course-card > .title > a:hover {
+  color: tomato;
+}
+.course-card > .score {
+  flex: 1;
+  /*background-color: green;*/
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.course-card > .score > .star {
+  width: 57px;
+  height: 10px;
+  background-image: url(../../assets/images/star_back.png);
+  background-position: -91px -58px;
+}
+.course-card > .score > .star > .y_star {
+  height: 100%;
+  background-image: url(../../assets/images/star_back.png);
+  background-position: -10px -158px;
+}
+.course-card > .score > .score_text {
+  font-size: 12px;
+  color: #777986;
+  margin-left: 10px;
+}
+.course-card > .zan {
+  flex: 1;
+  padding-left: 10px;
+}
+.course-card > .zan > .good {
+  font-size: 16px;
+  color: #777986;
+}
+.course-card > .zan > .good::before {
+  margin-right: 5px;
+  color: tomato;
+}
+/*# sourceMappingURL=index.css.map */

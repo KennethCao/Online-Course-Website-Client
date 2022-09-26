@@ -1,0 +1,105 @@
+@import "../../css/base.css";
+.lr-mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.lr-mask.show {
+  display: block;
+}
+.lr-mask .lr-pane {
+  padding: 30px 20px;
+  box-sizing: border-box;
+  width: 440px;
+  height: 440px;
+  background-color: #fff;
+  margin: 100px auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.lr-mask .lr-pane .close {
+  font-size: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.lr-mask .lr-pane .tabs {
+  height: 50px;
+  display: flex;
+}
+.lr-mask .lr-pane .tabs li {
+  flex: 1;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  color: #999;
+  border-bottom: 2px solid #ccc;
+  cursor: pointer;
+}
+.lr-mask .lr-pane .tabs li.current {
+  color: #333;
+  border-bottom-color: #51b257;
+}
+.lr-mask .lr-pane .panes {
+  flex: 1;
+  position: relative;
+}
+.lr-mask .lr-pane .panes li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.lr-mask .lr-pane .panes li.current {
+  display: block;
+}
+.lr-mask .lr-pane .panes li form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.lr-mask .lr-pane .panes li form label {
+  position: relative;
+}
+.lr-mask .lr-pane .panes li form label span {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lr-mask .lr-pane .panes li form label input {
+  height: 40px;
+  width: 100%;
+  padding-left: 32px;
+  box-sizing: border-box;
+  border: 1px solid #c5cddb;
+  outline: none;
+}
+.lr-mask .lr-pane .panes li form label input:focus {
+  border-color: #51b257;
+}
+.lr-mask .lr-pane .panes li form label:nth-child(2) {
+  margin: 30px 0;
+}
+.lr-mask .lr-pane .panes li form .btn {
+  margin-top: 40px;
+  height: 44px;
+  width: 100%;
+  text-align: center;
+  line-height: 44px;
+  background-color: #51b257;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border: none;
+  outline: none;
+}
+/*# sourceMappingURL=index.css.map */

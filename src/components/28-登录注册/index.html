@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+<div class="lr-mask show">
+    <div class="lr-pane">
+        <span class="close iconfont icon-icon_close" onclick="hideMask()"></span>
+        <ul class="tabs">
+            <li class="current">账号登录</li>
+            <li>立即注册</li>
+        </ul>
+        <ul class="panes">
+            <li class="current">
+                <form action="#">
+                    <label>
+                        <span class="iconfont icon-yonghu"></span>
+                        <input name="account" type="text" placeholder="请输入账号">
+                    </label>
+                    <label>
+                        <span class="iconfont icon-mima"></span>
+                        <input name="pwd" type="password" placeholder="请输入密码">
+                    </label>
+                    <input class="btn" type="submit" value="立即登录">
+                </form>
+            </li>
+            <li>
+                <form action="#">
+                <label>
+                    <span class="iconfont icon-yonghu"></span>
+                    <input name="account" type="text" placeholder="请输入账号">
+                </label>
+                <label>
+                    <span class="iconfont icon-mima"></span>
+                    <input name="pwd" type="text" placeholder="请输入密码">
+                </label>
+                    <label>
+                        <span class="iconfont icon-querenmima"></span>
+                        <input name="pwd" type="text" placeholder="请再次输入密码">
+                    </label>
+                <input class="btn" type="submit" value="立即登录">
+            </form>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function hideMask() {
+        let lrMask = document.getElementsByClassName("lr-mask")[0];
+        lrMask.className = "lr-mask";
+    }
+
+    function showMask() {
+        let lrMask = document.getElementsByClassName("lr-mask")[0];
+        lrMask.className = "lr-mask show";
+    }
+
+</script>
+<script>
+    let currentIndex = 0;
+
+    let tabs = document.querySelectorAll(".lr-pane .tabs li");
+    let panes = document.querySelectorAll(".lr-pane .panes li");
+
+    for (let i = 0, len = tabs.length; i < len; i++) {
+        let tab = tabs[i];
+        tab.onclick = function () {
+          tabs[currentIndex].className = "";
+          tab.className = "current";
+
+          panes[currentIndex].className = "";
+          panes[i].className = "current";
+
+          currentIndex = i;
+
+        };
+    }
+
+</script>
+</body>
+</html>

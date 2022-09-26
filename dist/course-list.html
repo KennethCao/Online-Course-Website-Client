@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课程列表</title>
+    <link rel="stylesheet" href="css/course-list.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keyword" content="全栈,大数据,人工智能,前端,后端,React,Vue,Node">
+    <meta name="description" content="撩课, 是一家致力于打造高质量课程的平台!圆您coding梦!">
+</head>
+<body>
+
+<!--1. mini导航栏-->
+<div class="navbar-mini">
+    <div class="content bx">
+        <div class="left">
+            <h1 class="logo">
+                <a href="index.html">
+                    撩学堂
+                </a>
+            </h1>
+            <ul class="menus">
+                <li><a href="teacher-list.html">讲师</a></li>
+                <li class="current"><a href="course-list.html">课程</a></li>
+                <li><a href="article-list.html">文章</a></li>
+            </ul>
+        </div>
+        <div class="center">
+            <form action="">
+                <div class="search-bar">
+                    <div class="category">
+                        <label>
+                            <select name="category">
+                                <option value="all">全部</option>
+                                <option value="course">课程</option>
+                                <option value="teacher">讲师</option>
+                                <option value="article">文章</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="keyword">
+                        <label>
+                            <input type="text" placeholder="请输入搜索关键字" name="kw">
+                        </label>
+                    </div>
+                    <div class="submit-btn">
+                        <input class="iconfont" type="submit" value="&#xe610;">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <div class="intro">
+                <div class="user">
+                    <span class="nick-name">用户昵称: sz</span>
+                    <img class="header" src="assets/images/header.png" alt="">
+                </div>
+                <div class="operation-pane">
+                    <ul class="operation">
+                        <li><a href="index.html">撩课学院 - itlike.com</a></li>
+                        <li><a href="my-study.html">我的学习</a></li>
+                        <li><a href="my-setting.html">设置</a></li>
+                        <li class="exit">退出</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--2. 分类选项卡-->
+<div class="category-bar">
+    <div class="content bx">
+        <dl>
+            <dt>分类:</dt>
+            <dd class="selected">全部</dd>
+            <dd>Python</dd>
+            <dd>Java</dd>
+            <dd>H5</dd>
+        </dl>
+    </div>
+</div>
+
+<!--3. 版心容器: 课程列表条目-->
+<div class="course-list bx">
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+    <div class="course-card column5">
+        <div class="image">
+            <span class="tag">热门</span>
+            <a href="course-detail.html">
+                <img src="assets/images/course_img.png" alt="">
+            </a>
+        </div>
+        <div class="title">
+            <a href="course-detail.html">
+                极系列-H5全栈-Sz
+            </a>
+        </div>
+        <div class="score">
+            <div class="star">
+                <div class="y_star" style="width: 50%;"></div>
+            </div>
+            <span class="score_text">4分</span>
+        </div>
+        <div class="zan">
+            <span class="good iconfont icon-icon_good">100人好评</span>
+        </div>
+    </div>
+</div>
+
+<!--4. 底部组件-->
+<div class="footer">
+    <div class="content bx">
+        <div class="left">
+            <p class="intro">撩课云课堂 是掘智公司（itlike.com）旗下专注职业技能提升的在线学习平台。</p>
+            <ul class="friend-link">
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">帮助中心</a></li>
+                <li><a href="#">撩课论坛</a></li>
+            </ul>
+            <p class="ban">©2018-2020 课程内容版权均归 撩课教育 所有 沪ICP备18036896号</p>
+        </div>
+        <div class="right">
+            <div class="ad-image">
+                <div class="left-ad">
+                    <div class="ewm-pane">
+                        <img src="assets/images/ewm_lk.jpg" alt="">
+                    </div>
+                </div>
+                <div class="right-ad">
+                    <div class="ewm-pane">
+                        <img src="assets/images/ewm_lk.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="second-line">
+                客服热线 <span class="time">09:00-19:00</span>
+            </p>
+            <p class="tel">0554-66666666</p>
+        </div>
+    </div>
+</div>
+
+
+<!--5. 固定客服组件-->
+<div class="fixed-contact">
+    <div class="contact">
+
+    </div>
+    <div class="app">
+
+        <div class="ewm-pane">
+            <img src="assets/images/ewm_lk.jpg" alt="">
+        </div>
+    </div>
+    <div class="back-top">
+
+    </div>
+</div>
+</body>
+</html>

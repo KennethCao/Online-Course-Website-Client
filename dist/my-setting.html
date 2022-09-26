@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的设置</title>
+    <link rel="stylesheet" href="css/my-setting.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keyword" content="全栈,大数据,人工智能,前端,后端,React,Vue,Node">
+    <meta name="description" content="撩课, 是一家致力于打造高质量课程的平台!圆您coding梦!">
+</head>
+<body>
+
+<!--1. mini导航栏-->
+<div class="navbar-mini">
+    <div class="content bx">
+        <div class="left">
+            <h1 class="logo">
+                <a href="index.html">
+                    撩学堂
+                </a>
+            </h1>
+            <ul class="menus">
+                <li class="current"><a href="teacher-list.html">讲师</a></li>
+                <li><a href="course-list.html">课程</a></li>
+                <li><a href="article-list.html">文章</a></li>
+            </ul>
+        </div>
+        <div class="center">
+            <form action="">
+                <div class="search-bar">
+                    <div class="category">
+                        <label>
+                            <select name="category">
+                                <option value="all">全部</option>
+                                <option value="course">课程</option>
+                                <option value="teacher">讲师</option>
+                                <option value="article">文章</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="keyword">
+                        <label>
+                            <input type="text" placeholder="请输入搜索关键字" name="kw">
+                        </label>
+                    </div>
+                    <div class="submit-btn">
+                        <input class="iconfont" type="submit" value="&#xe610;">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <div class="intro">
+                <div class="user">
+                    <span class="nick-name">用户昵称: sz</span>
+                    <img class="header" src="assets/images/header.png" alt="">
+                </div>
+                <div class="operation-pane">
+                    <ul class="operation">
+                        <li><a href="index.html">撩课学院 - itlike.com</a></li>
+                        <li><a href="my-study.html">我的学习</a></li>
+                        <li><a href="my-setting.html">设置</a></li>
+                        <li class="exit">退出</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--2. 编辑面板-->
+<div class="bx edit-pane">
+    <ul class="tabs">
+        <li class="current">资料设置</li>
+        <li>账号设置</li>
+    </ul>
+    <ul class="panes">
+        <li class="current">
+            <p class="notice">完善个人资料是让别人认识你的第一步</p>
+            <table>
+                <caption>用户头像</caption>
+                <tbody>
+                <tr>
+                    <td><label> </label></td>
+                    <td>
+                        <div class="header-wrap">
+                            <img class="header-img" src="https://like-h5.github.io/JXL-H5-LXT-Client/dist/assets/images/header.png"
+                                 alt="">
+                            <div class="mask">点击上传头像</div>
+                            <input class="header-file" type="file" name="header" value="上传头像">
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <form action="" id="userEdit">
+                <table>
+                    <caption>基本信息</caption>
+                    <tbody>
+                    <tr>
+                        <td><label for="nick_name">昵称: </label></td>
+                        <td><input type="text" name="nick_name" id="nick_name" value="撩课Sz"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="intro">简介: </label></td>
+                        <td><textarea id="intro" name="intro">撩课学院创始人</textarea></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="保存">
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </li>
+        <li>
+            <p class="notice">请保护好你的账号密码</p>
+            <form action="" id="accountEdit">
+                <table>
+                    <caption>账户信息</caption>
+                    <tbody>
+                    <tr>
+                        <td><label for="account">账号: </label></td>
+                        <td><input type="text" name="account" id="account" value="123456" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><label for="pwd">旧密码: </label></td>
+                        <td><input type="text" name="pwd" id="pwd"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="new-pwd">新密码: </label></td>
+                        <td><input type="text" name="new_pwd" id="new-pwd"></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="保存">
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </li>
+    </ul>
+</div>
+
+<!--3. 底部组件-->
+<div class="footer">
+    <div class="content bx">
+        <div class="left">
+            <p class="intro">撩课云课堂 是掘智公司（itlike.com）旗下专注职业技能提升的在线学习平台。</p>
+            <ul class="friend-link">
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">帮助中心</a></li>
+                <li><a href="#">撩课论坛</a></li>
+            </ul>
+            <p class="ban">©2018-2020 课程内容版权均归 撩课教育 所有 沪ICP备18036896号</p>
+        </div>
+        <div class="right">
+            <div class="ad-image">
+                <div class="left-ad">
+                    <div class="ewm-pane">
+                        <img src="./assets/images/ewm_lk.jpg" alt="">
+                    </div>
+                </div>
+                <div class="right-ad">
+                    <div class="ewm-pane">
+                        <img src="./assets/images/ewm_lk.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="second-line">
+                客服热线 <span class="time">09:00-19:00</span>
+            </p>
+            <p class="tel">0554-66666666</p>
+        </div>
+    </div>
+</div>
+
+
+<!--4. 固定客服组件-->
+<div class="fixed-contact">
+    <div class="contact">
+
+    </div>
+    <div class="app">
+
+        <div class="ewm-pane">
+            <img src="./assets/images/ewm_lk.jpg" alt="">
+        </div>
+    </div>
+    <div class="back-top">
+
+    </div>
+</div>
+
+<script src="js/my-setting.js"></script>
+<script>
+
+    function getObjectURL(file) {
+        let url = null;
+        if (window.createObjectURL !== undefined) {
+            url = window.createObjectURL(file);
+        } else if (window.URL !== undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL !== undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+
+    let upBtn = document.querySelector(".header-wrap>.mask");
+    let image = document.querySelector(".header-wrap>.header-img");
+    let headerFile = document.querySelector(".header-wrap>.header-file")
+    let initImageSrc = image.src;
+    let newImageSrc;
+    upBtn.onclick = function () {
+        headerFile.click()
+    }
+    headerFile.onchange = function () {
+        let files = headerFile.files;
+        if (files.length === 0) return;
+        let fileNameArr = files[0].name.split(".");
+        let fileExtName = fileNameArr[fileNameArr.length - 1];
+        if (!["jpg", "jpeg", "png"].includes(fileExtName)) return;
+        image.src = getObjectURL(files[0])
+        // 执行更新头像的请求, 并赋值 newImageSrc
+
+    }
+
+    userEdit.onsubmit = function (evt) {
+        evt.preventDefault()
+        let formData = new FormData();
+        let nick_name = userEdit.nick_name.value;
+        let intro = userEdit.intro.value;
+        let header = newImageSrc ? newImageSrc : initImageSrc;
+
+        formData.append("nick_name", nick_name);
+        formData.append("intro", intro);
+        formData.append("header", header)
+
+        console.log(nick_name, intro, header)
+
+    }
+    accountEdit.onsubmit = function (evt) {
+        evt.preventDefault();
+        let account = accountEdit.account.value;
+        let pwd = accountEdit.pwd.value;
+        let new_pwd = accountEdit.new_pwd.value;
+        console.log(account, pwd, new_pwd);
+    }
+
+</script>
+</body>
+</html>

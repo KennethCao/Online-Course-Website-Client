@@ -1,0 +1,65 @@
+@import "../../css/base.css";
+.teacher-card {
+  width: 390px;
+  height: 150px;
+  margin-top: 100px;
+  box-shadow: 2px -1px 10px 0 rgba(0, 0, 0, 0.15);
+  display: flex;
+}
+.teacher-card .left {
+  width: 200px;
+  position: relative;
+}
+.teacher-card .left .t-header {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  box-shadow: 2px -1px 10px 0 rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.teacher-card .left .t-header:hover {
+  animation: like-rotate 10s linear 0s infinite;
+}
+.teacher-card .left .t-name {
+  width: 150px;
+  line-height: 34px;
+  background-color: #51b257;
+  border-radius: 17px;
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 20px;
+}
+.teacher-card .right {
+  flex: 1;
+  padding: 5px;
+}
+.teacher-card .right .t-position {
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  color: #51b257;
+  font-weight: 700;
+  border-bottom: 2px solid #51b257;
+}
+.teacher-card .right .t-intro {
+  padding-top: 10px;
+  font-size: 16px;
+  color: #666;
+  letter-spacing: 2px;
+}
+@keyframes like-rotate {
+  from {
+    transform: translate(-50%) rotateZ(0deg);
+  }
+  to {
+    transform: translate(-50%) rotateZ(360deg);
+  }
+}
+/*# sourceMappingURL=index.css.map */
